@@ -1,0 +1,48 @@
+.swiper  
+  &-container
+    position: relative
+    overflow-x: hidden
+  &-wrapper
+    display: flex
+  &-pagination
+    position: absolute
+    bottom: 12px
+    left: 50%
+    transform: translateX(-50%)
+    align-items: center
+    display: flex
+    &-bullet
+      cursor: pointer
+      margin-right: 10px
+      background-color: $greyLight
+      width: 10px
+      height: 10px
+      display: block
+      border-radius: 50%
+      &:last-child
+        margin-right: 0
+      &-active
+        height: 15px
+        width: 15px
+        background-color: $yellow
+.slider
+  & > .-noVisible
+    visibility: hidden
+  &__innerbox
+    max-width: 1200px
+    width: 100%
+    position: relative
+    overflow-y: hidden
+    & > .btnConsult
+      position: absolute
+      right: 95px
+      bottom: 30px
+  &__text
+    position: absolute
+    top: 50px
+    right: 95px
+    & *
+      color: $mBlue
+  &__desc
+    font-family: 'RobotoRegular'
+  

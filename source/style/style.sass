@@ -1,19 +1,39 @@
 @import './common/_const.sass'
-@import './_header.sass'
-@import './_footer.sass'
+@import './elements/**/*.sass'
 
-.title
+*
+    box-sizing: border-box
 
-h1.-lg
-h2.-bg
-h3.-md
+h1, h2, h3, p, ul, li, nav, section, a
+    margin: 0
+    padding: 0
 
+h1
+    +Roboto(bold)
+    font-size: 1.875rem
+    color: $black
+    &.title-lg
+        text-align: center
+h2
+    +Roboto(bold)
+    font-size: 1.625rem
+    color: $black
+    &.title-bg
+        margin-bottom: 35px
+        text-align: center
+h3
+    +Roboto(bold)
+    font-size: 1.25rem
+    color: $black
+    &.title-md
+        text-align: center
 
 html
-    font: 16px 'RobotoRegular'
+    font: 16px 'RobotoLight'
     min-width: 320px
     width: 100%
     height: auto
+    color: $mGrey
 
 
 body
@@ -24,5 +44,25 @@ body
     height: auto
     display: flex
     flex-direction: column
-    line-height: 1
+    line-height: 1.2
+    margin: 0 auto
+
+a
+    text-decoration: none
+    color: #000000
+
+img
+    max-width: 100%
+    width: 100%
+
+section
+    margin-bottom: 60px
+
+button
+    outline: none
+    cursor: pointer
+
+.container
+    max-width: 1120px
+    width: 100%
     margin: 0 auto

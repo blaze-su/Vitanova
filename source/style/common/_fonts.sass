@@ -1,7 +1,22 @@
 @font-face
     font-family: 'RobotoRegular'
-    src: url("../fonts/Fonts-Roboto/Roboto-Regular.ttf")
+    src: url("../fonts/Roboto-Regular.ttf")
+@font-face
+    font-family: 'RobotoLight'
+    src: url("../fonts/Roboto-Light.ttf")
+@font-face
+    font-family: 'RobotoBold'
+    src: url("../fonts/Roboto-Bold.ttf")
+@font-face
+    font-family: 'RobotoMedium'
+    src: url("../fonts/Roboto-Medium.ttf")
 
 @mixin Roboto($style: regular)
     @if($style==regular)
         font-family: "RobotoRegular"
+    @if($style==light)
+        font-family: "RobotoLight"
+    @if($style==bold)
+        font-family: "RobotoBold"
+    @if($style==medium)
+        font-family: "RobotoMedium"

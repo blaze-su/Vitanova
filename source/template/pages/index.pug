@@ -1,7 +1,29 @@
 extends ../_template
 
-block variables
-    - var bodyClass = 'isHome';
+//- block variables
+//-     - var bodyClass = 'isHome';
 
 block content
-    
+  .container
+    section.slider
+      .swiper-container.-noVisible
+        block slider
+          include ../common/_slider
+    section.shares
+      -
+        var shares = [
+          {name: 'Накопительная карта в подарок', src: 'assets/img/shares/1.png', time: 'до 14.мая 2016 копия 2'},
+          {name: 'Скидка для  студентов 15%  на эпиляцию', src: 'assets/img/shares/2.png', time: 'до 14.мая 2016 копия 2'},
+          {name: 'Оптом в дешевле  скидка 5 ноготь  в подарок', src: 'assets/img/shares/3.png', time: 'до 14.мая 2016 копия 2'},
+          {name: 'Консультация  дермато- венеролога  БЕСПЛАТНО', src: 'assets/img/shares/4.png', time: 'до 14.мая 2016 копия 2'}
+        ]
+      h2.title-bg Акции
+      each share in shares
+        .shares__innercase
+          .share
+            img(src= share.src, alt="").share__image
+            .share__info
+              h2.share__name= share.name
+              .share__timeBox
+                +svgMix('share__timeIcon','shareTime')
+                .share__time= share.time              
