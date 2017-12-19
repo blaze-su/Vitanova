@@ -1,0 +1,44 @@
+.aboutUs
+  position: relative
+  padding: 60px 0 55px
+  display: flex
+  &:after
+    position: absolute
+    content: ''
+    display: block
+    background-color: $mBlue
+    width: 200vw
+    height: 100%
+    top: 0
+    left: 0
+    transform: translateX(-50%)
+    z-index: -1
+  &__image
+    min-width: 100%
+    max-width: 100%
+    height: auto
+    &box
+      max-width: 464px
+      width: 100%
+      height: auto
+      margin: 0 25px
+      float: left
+  &__title
+    color: $white
+    text-align: left !important
+    &Sub
+      color: $white
+      text-align: left !important
+      margin-bottom: 25px
+  &__info
+    color: $white
+  &__item
+    margin-bottom: 25px
+    &:last-child
+      margin-bottom: 0
+    &Title
+      font-size: 20px
+      color: $yellow
+      margin-bottom: 10px
+    &Text
+      line-height: 1.3

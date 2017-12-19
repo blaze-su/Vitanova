@@ -12,18 +12,101 @@ block content
     section.shares
       -
         var shares = [
-          {name: 'Накопительная карта в подарок', src: 'assets/img/shares/1.png', time: 'до 14.мая 2016 копия 2'},
-          {name: 'Скидка для  студентов 15%  на эпиляцию', src: 'assets/img/shares/2.png', time: 'до 14.мая 2016 копия 2'},
-          {name: 'Оптом в дешевле  скидка 5 ноготь  в подарок', src: 'assets/img/shares/3.png', time: 'до 14.мая 2016 копия 2'},
-          {name: 'Консультация  дермато- венеролога  БЕСПЛАТНО', src: 'assets/img/shares/4.png', time: 'до 14.мая 2016 копия 2'}
+          {clr: '-pink', name: 'Накопительная карта в подарок', src: 'assets/img/shares/1.png', time: 'до 14.мая 2016'},
+          {clr: '-brown', name: 'Скидка для  студентов 15%  на эпиляцию', src: 'assets/img/shares/2.png', time: 'до 14.мая 2016'},
+          {clr: '-yellow', name: 'Оптом в дешевле  скидка 5 ноготь  в подарок', src: 'assets/img/shares/3.png', time: 'до 14.мая 2016'},
+          {clr: '-blue', name: 'Консультация  дермато- венеролога  БЕСПЛАТНО', src: 'assets/img/shares/4.png', time: 'до 14.мая 2016'}
         ]
       h2.title-bg Акции
-      each share in shares
-        .shares__innercase
+      .shares__innercase
+        each share in shares
           .share
-            img(src= share.src, alt="").share__image
-            .share__info
+            .share__innerbox
+              img(src= share.src, alt="").share__image
+            //- класс с цветом нужна возможность редактировать из админки
+            .share__innerbox.share__info(class=share.clr)
               h2.share__name= share.name
               .share__timeBox
-                +svgMix('share__timeIcon','shareTime')
-                .share__time= share.time              
+                +svgMix('share__timeIcon','clock')
+                .share__time= share.time
+    section.services
+      -
+        var services = [
+          {src: 'assets/img/services/1.png', title: 'Лазерная косметология'},
+          {src: 'assets/img/services/2.png', title: 'Удаление новообразований'},
+          {src: 'assets/img/services/3.png', title: 'Лазерная эпиляция'},
+          {src: 'assets/img/services/4.png', title: 'Уход за лицом'},
+          {src: 'assets/img/services/5.png', title: 'Иньекции'},
+          {src: 'assets/img/services/6.png', title: 'Лечение грибка ногтей'},
+          {src: 'assets/img/services/7.png', title: 'Коррекция фигуры'},
+          {src: 'assets/img/services/8.png', title: 'Контурная пластика'}
+        ]
+      h2.title-bg Наши услуги
+      .services__innercase
+        each service in services
+          .service
+            img(src= service.src, alt="").service__image
+            .service__name
+              a(href="#").service__nameLink= service.title
+      +_btnConsult("Записаться на прием")
+    section.aboutUs
+      .aboutUs__imagebox
+        img(src="assets/img/aboutUs.png", alt="").aboutUs__image
+      .aboutUs__info
+        h2.title-bg.aboutUs__title О нас
+        h3.title-md.aboutUs__titleSub Центр VitaNova это:
+        -
+          var list = [
+            {title: "Команда профессионалов.", text: "мастеров своего дела. Это индивидуальный подход и внимательность. Все специалисты центра имеют высшее медицинское образование и не перестают совершенствовать свое мастерство."},
+            {title: "Новейшее оборудование.", text: "Аппараты CPM-терапии немецкого производства представленные в центре реабилитации VitaNuova делают восстановление после травм и операций легче, быстрее, а самое главное эффективней."},
+            {title: "Единственный в ЮФО аппарат Alma Lasers Harmony XL.", text: "Лечение грибка с помощью этого аппарата - это самый современный и безопасный способ лечения."},
+            {title: "Практика лечения заболеваний.", text: "опорно-двигательного аппарата методами ударно-волновой терапии. Этот метод доказал свою эффективность в лечении артритов, артрозов, остеохондрозов, позвоночной грыжи и пяточной шпоры."},
+            {title: "Кабинет косметолога.", text: "процедуры пилинга (карбоновый, поверхностный Sculptura (Италия), срединный IMAGE (США)), чистки лица(ультразвуковая, атравматическая). Косметический уход за лицом."}
+          ]
+        ul.aboutUs__list
+          each item in list
+            li.aboutUs__item
+              p.aboutUs__itemTitle= item.title
+              p.aboutUs__itemText= item.text
+    section.specialists
+      h2.title-bg.aboutUs__title Специалисты
+      -
+        var specialists = [
+          {name: 'Захарова', name2: 'Диана Владимировна', src: 'assets/img/specialists/1.png', status: 'врач-дерматовенеролог'},
+          {name: 'Коротких', name2: 'Вячеслав Сергеевич', src: 'assets/img/specialists/2.png', status: 'врач-физиотерапевт'},
+          {name: 'Иванова', name2: 'Юлия Александровна', src: 'assets/img/specialists/3.png', status: 'врач-дерматовенеролог'},
+          {name: 'Осташевская', name2: 'Юлия Борисовна', src: 'assets/img/specialists/4.png', status: 'врач-дерматовенеролог'}
+        ]
+      ul.specialists__list.swiper-specialists
+        .swiper-wrapper
+          each item in specialists
+            li.specialist.swiper-slide
+              .specialist__imagebox
+                img(src= item.src, alt="alt").specialist__image
+              a(href="#").specialist__name
+                span= item.name
+                br
+                span= item.name2
+              span.specialist__status= item.status
+        +svgMix('swiper-button-prev','sl-prev-g')
+        +svgMix('swiper-button-next','sl-next-g')
+      +_btnConsult("Получить консультацию")
+    section.reviews
+      h2.title-bg.reviews__title Отзывы
+      -
+        var reviews = [
+          {src: 'assets/img/reviews/1.png', name: 'Евгений', date: '11 ноября 2016 г.', text: 'Делал пластику уздечки, врач Мамедов Халит. Спасибо врачу и клинике, все прошло просто и быстро. Долго готовился, боялся, а оказалось 10 минут и готово, спасибо'},
+          {src: 'assets/img/reviews/2.png', name: 'Максим', date: '23 ноября 2016 г.', text: 'Отличный центр. Высококлассные специалисты(по крайней мере удаляющие бородавки) Спасибо Вам большое!'},
+          {src: 'assets/img/reviews/3.png', name: 'Александр', date: '28 ноября 2016 г.', text: 'Сделал татуировку в молодости. Переживал за не презентабельный внешний вид, тем более что татуировку было видно из-под рубашки. Обратился в Лазмед. За 4 сеанса мне полностью ее вывели!'}
+        ]
+      .reviews__innercase.swiper-reviews
+        .swiper-wrapper
+          each item in reviews
+            .review.swiper-slide
+              img(src= item.src, alt="").review__image
+              .review__info
+                span.review__name= item.name
+                span.review__date= item.date
+                p.review__text= item.text
+        +svgMix('swiper-button-prev','sl-prev-w')
+        +svgMix('swiper-button-next','sl-next-w')

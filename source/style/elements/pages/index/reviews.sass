@@ -1,0 +1,18 @@
+.reviews
+  position: relative
+  padding: 40px 0 50px
+  // display: flex
+  &:after
+    position: absolute
+    content: ''
+    display: block
+    background-color: $mBlue
+    width: 200vw
+    height: 100%
+    top: 0
+    left: 0
+    transform: translateX(-50%)
+    z-index: -1
+  &__title
+    margin: 0 auto
+    color: $white
