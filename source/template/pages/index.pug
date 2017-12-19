@@ -69,7 +69,7 @@ block content
               p.aboutUs__itemTitle= item.title
               p.aboutUs__itemText= item.text
     section.specialists
-      h2.title-bg.aboutUs__title Специалисты
+      h2.title-bg Специалисты
       -
         var specialists = [
           {name: 'Захарова', name2: 'Диана Владимировна', src: 'assets/img/specialists/1.png', status: 'врач-дерматовенеролог'},
@@ -99,14 +99,15 @@ block content
           {src: 'assets/img/reviews/2.png', name: 'Максим', date: '23 ноября 2016 г.', text: 'Отличный центр. Высококлассные специалисты(по крайней мере удаляющие бородавки) Спасибо Вам большое!'},
           {src: 'assets/img/reviews/3.png', name: 'Александр', date: '28 ноября 2016 г.', text: 'Сделал татуировку в молодости. Переживал за не презентабельный внешний вид, тем более что татуировку было видно из-под рубашки. Обратился в Лазмед. За 4 сеанса мне полностью ее вывели!'}
         ]
-      .reviews__innercase.swiper-reviews
-        .swiper-wrapper
-          each item in reviews
-            .review.swiper-slide
-              img(src= item.src, alt="").review__image
-              .review__info
-                span.review__name= item.name
-                span.review__date= item.date
-                p.review__text= item.text
-        +svgMix('swiper-button-prev','sl-prev-w')
-        +svgMix('swiper-button-next','sl-next-w')
+      .reviews__innercase
+        .swiper-reviews
+          .swiper-wrapper
+            each item in reviews
+              .review.swiper-slide
+                img(src= item.src, alt="").review__image
+                .review__info
+                  span.review__name= item.name
+                  span.review__date= item.date
+                  p.review__text= item.text
+          +svgMix('swiper-button-prev','sl-prev-w')
+          +svgMix('swiper-button-next','sl-next-w')
