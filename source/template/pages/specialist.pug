@@ -1,0 +1,68 @@
+extends ../_template
+
+block content
+  +subHeader("Специалисты")
+  .container.specialist
+    .specialist__leftbox
+      .specialist__photobox
+        img(src="assets/img/specialist.png", alt="").specialist__photo
+      +_btnConsult("Записаться на прием")
+      .specialist__schedule
+        h2.title-bg Расписание
+        ul.specialist__scheduleList
+          li.specialist__scheduleItem Пн - с 12:00 - 16:00
+          li.specialist__scheduleItem Ср - с 10:00 - 14:00
+          li.specialist__scheduleItem Вс - с 10:00 - 14:00
+    .specialist__rightbox
+      p.specialist__title Захарова Диана Владимировна
+      p.specialist__titleSub врач-дерматовенеролог
+      .specialist__text
+        p в 2009 г. окончила Кубанский Государственный медицинский Университет, лечебный факультет.
+        p в 2011г. прошла клиническую ординатуру по специальности «дерматовенерология» на базе ККВД.
+        p в 2011-2012г. Специализация по профилю «косметология», 576ч. Санкт-Петербургский Государственный медицинский Университет им. Павлова.
+        p в 2011-2012г. Специализация по профилю «косметология», 576ч. Санкт-Петербургский Государственный медицинский Университет им. Павлова.
+        p 2016г. Повышение квалификации по специальности «дерматовенерология», 144ч.
+        p Является сертифицированным специалистом по всем современным методам эстетической коррекции и коррекции возрастных изменений в косметологии, постоянно повышает свою квалификацию, участник семинаров, конгрессов, форумов по эстетической медицине.
+      
+      p.specialist__title Основные направления в работе:
+      .specialist__text
+        p различные виды лазерной терапии (омоложение, шлифовка, лечение пигментации, сосудистых     образований, онихомикоза, лазерная эпиляция, удаление кожных новообразований)
+        p основные инъекционные методы (контурная пластика, объемное моделирование, ботулинотерапия, биоревитализация, мезотерапия ) аппаратные процедуры (микротоки, ультразвук, УВТ и т.д.)
+        p нитевые методики омоложения ( APTOS, мезонити)
+        p подготовка к пластической хирургии и ведение в постоперационный период
+        p трихологическая консультация
+        p плазмотерапевтические методы лечения
+
+      .specialist__galery
+        h2.title-bg Фотогалеря
+        .specialist__galeryList
+          .specialist__galeryItem
+            img(src="assets/img/specialist-galery/1.png", alt="").specialist__galeryPhoto
+            +svgMix('search', 'search')
+          .specialist__galeryItem
+            img(src="assets/img/specialist-galery/2.png", alt="").specialist__galeryPhoto
+            +svgMix('search', 'search')
+          .specialist__galeryItem
+            img(src="assets/img/specialist-galery/3.png", alt="").specialist__galeryPhoto
+            +svgMix('search', 'search')
+          .specialist__galeryItem
+            img(src="assets/img/specialist-galery/4.png", alt="").specialist__galeryPhoto
+            +svgMix('search', 'search')
+        span.specialist__galeryMoreBtn ЕЩЕ ФОТО
+      
+      .specialist__review
+        h2.title-bg Отзывы о процедуре
+
+        -
+          var reviews = [
+            {name: 'Евгений', date: '11 ноября 2016 г.', text: 'Делал пластику уздечки, врач Мамедов Халит. Спасибо врачу и клинике, все прошло просто и быстро. Долго готовился, боялся, а оказалось 10 минут и готово, спасибо'},
+            {name: 'Максим', date: '23 ноября 2016 г.', text: 'Отличный центр. Высококлассные специалисты(по крайней мере удаляющие бородавки) Спасибо Вам большое!'},
+            {name: 'Иван', date: '21 ноября 2016 г.', text: 'Сделал татуировку в молодости. Переживал за не презентабельный внешний вид, тем более что татуировку было видно из-под рубашки. Обратился в Лазмед. За 4 сеанса мне полностью ее вывели!'},
+            {name: 'Александр', date: '28 ноября 2016 г.', text: 'Сделал татуировку в молодости. Переживал за не презентабельный внешний вид, тем более что татуировку было видно из-под рубашки. Обратился в Лазмед. За 4 сеанса мне полностью ее вывели!'}
+          ]
+        .specialist__reviewList
+          each item in reviews
+            .specialist__reviewItem
+              p.specialist__reviewItemName= item.name
+              span.specialist__reviewItemDate= item.date
+              p.specialist__reviewItemText= item.text

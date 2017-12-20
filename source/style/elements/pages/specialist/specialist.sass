@@ -1,0 +1,98 @@
+.specialist
+  display: flex
+  & .title-bg
+    text-align: left !important
+  &__leftbox
+    max-width: 265px
+    width: 100%
+    margin-right: 20px
+    & > .btnConsult
+      width: 100%
+  &__photo
+    width: auto
+    max-height: 100%
+    min-height: 100%
+    &box
+      max-width: 265px
+      width: 100%
+      height: 292px
+      margin-bottom: 15px
+  &__schedule
+    margin-top: 35px
+    padding-left: 15px
+    & > .title-bg
+      margin-bottom: 15px
+    &List
+      text-align: left
+    &Item
+      color: $mBlue
+      margin-bottom: 10px
+  &__rightbox
+    margin-top: -9px
+    text-align: left
+    line-height: 1.5
+  &__title
+    color: $mBlue
+    +Roboto(bold)
+    font-size: 1.25rem
+    margin-bottom: 3px
+    margin-top: 30px
+    &:first-child
+      margin-top: 0
+    &Sub
+      text-transform: uppercase
+      font-size: 0.875rem !important
+      margin-bottom: 20px
+  &__text
+    +Roboto(light)
+  &__galery
+    text-align: center
+    margin-top: 55px
+    margin-bottom: 60px
+    overflow-x: hidden
+    &List
+      display: flex
+      flex-wrap: wrap
+      margin-left: -5px
+      height: 204px
+      overflow: hidden
+    &Item
+      margin-left: 5px
+      cursor: pointer
+      width: 204px
+      height: 204px
+      overflow: hidden
+      position: relative
+      & > .search
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        width: 30px
+        display: none
+        z-index: 2
+      &:after
+        position: absolute
+        display: none
+        content: ''
+        width: 100%
+        height: 100%
+        top: 0
+        left: 0
+        background-color: rgba($mBlueDark, .541)
+      &:hover
+        &:after
+          display: block
+        & > .search
+          display: block
+    &Photo
+      min-width: 100%
+      min-height: 100%
+    &MoreBtn
+      margin-top: 25px
+      color: $yellowDark
+      text-decoration: underline
+      text-transform: uppercase
+      display: block
+      cursor: pointer
+      
