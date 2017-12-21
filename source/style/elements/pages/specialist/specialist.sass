@@ -1,5 +1,6 @@
-.specialist
+.specialistPage
   display: flex
+  padding-bottom: 3.75rem
   & .title-bg
     text-align: left !important
   &__leftbox
@@ -57,6 +58,7 @@
       height: 204px
       overflow: hidden
     &Item
+      margin-bottom: 5px
       margin-left: 5px
       cursor: pointer
       width: 204px
@@ -95,4 +97,27 @@
       text-transform: uppercase
       display: block
       cursor: pointer
-      
+  &__review
+    max-width: 738px
+    &List
+      margin-top: -18px
+      display: flex
+      flex-wrap: wrap
+      flex-direction: column
+    &Item
+      max-width: 360px
+      width: 100%
+      padding: 25px
+      border: 1px solid $greyLight
+      margin-right: 18px
+      margin-top: 18px
+      &:hover
+        box-shadow: 0px 5px 25px 0px rgba($black, 0.3)
+        .specialistPage__reviewItemText
+          color: $black
+      &Name
+        color: $mBlue
+        +Roboto(bold)
+      &Date
+      &Text
+        margin-top: 25px

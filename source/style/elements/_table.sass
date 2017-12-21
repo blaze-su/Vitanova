@@ -1,0 +1,69 @@
+table
+  border-spacing: 0px
+  width: 100%
+  color: $greyDark
+thead
+  +Roboto(bold)
+  & tr.-name
+    background-color: $greyLight
+    & > td
+      max-width: 100% !important
+tbody
+  & tr
+    &:last-child
+      border-bottom: 0.5px solid $greyDark
+    &.-active
+      background-color: $yellowDark
+      & > td.-name
+        position: relative
+        & > span
+          position: absolute
+          right: 0
+          top: 0
+          width: 60px
+          height: 100%
+          background-color: $white
+          display: flex
+          align-items: center
+          color: $yellowDark
+          font-size: 20px
+          &:before
+            position: absolute
+            content: ''
+            display: block
+            left: 0
+            top: 0
+            border: 19.5px solid transparent
+            border-right: 25px solid $white
+            transform: translateX(-100%)
+            z-index: 1
+          &:after
+            z-index: 0
+            position: absolute
+            content: ''
+            display: block
+            left: -1px
+            top: 0
+            border: 19.5px solid transparent
+            border-right: 25px solid $greyDark
+            transform: translateX(-100%)
+  & td.-name
+      justify-content: flex-start
+tr
+  display: flex
+  border: 0.5px solid $greyDark
+  border-bottom: none
+  border-right: none
+  max-height: 2.5rem
+td
+  border-right: 0.5px solid $greyDark
+  padding: 0 20px
+  display: flex
+  justify-content: center
+  align-items: center
+  height: 2.49rem
+  flex: 1
+  &:first-child
+    max-width: 75px
+  &:last-child
+    max-width: 150px

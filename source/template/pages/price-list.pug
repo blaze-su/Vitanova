@@ -1,0 +1,60 @@
+extends ../_template
+
+block content
+  +subHeader("Прайс - лист", true)
+  .container.pricesPage
+    +banner("assets/img/banner/laser.png", "Лазерная ЭПИЛЯЦИЯ", "Без боли")
+    .pricesPage__list
+      -
+        var tableInfo = [
+          {
+            title: 'Уход за лицом',
+            tableName: 'Лоб',
+            rowInfo: [
+              {number: 1, name: "Лоб", price: 2000},
+              {number: 2, name: "Межбровье", price: 1500},
+              {number: 3, name: "Уши", price: 3350},
+              {number: 4, name: "Подбородок", price: 1200}
+            ]
+          },
+          {
+            title: 'Контурная пластика',
+            tableName: 'Лоб',
+            rowInfo: [
+              {number: 1, name: "Лоб", price: 2000},
+              {number: 2, name: "Межбровье", price: 1500},
+              {number: 3, name: "Уши", price: 3350},
+              {number: 4, name: "Подбородок", price: 1200},
+              {number: 5, name: "Лоб", price: 2000},
+              {number: 6, name: "Межбровье", price: 1500},
+              {number: 7, name: "Уши", price: 3350},
+              {number: 8, name: "Подбородок", price: 1200}
+            ]
+          }
+        ]
+      each item in tableInfo
+        .pricesPage__item
+          h3.title-bg= item.title
+          table
+            thead
+              tr
+                td №
+                td Наименование
+                td Цена
+              tr.-name
+                td= item.tableName
+            tbody
+              each itemTable, key in item.rowInfo
+                - if (key == 1)
+                  //- добавляеть class '-active' если есть параметр скидки для продукта
+                  tr.-active
+                    td= itemTable.number
+                    td.-name= itemTable.name
+                      //- добавляеть span если есть параметр скидки для продукта
+                      span -20%
+                    td= itemTable.price
+                - else
+                  tr
+                    td= itemTable.number
+                    td.-name= itemTable.name
+                    td= itemTable.price

@@ -5,6 +5,16 @@ mixin svgMix(svgClass, name)
 mixin _btnConsult(text)
 	button.btnConsult=text
 
-mixin subHeader(text)
-	.subHeader
-		h2.subHeader__title= text
+mixin subHeader(text, banner)
+	- if (banner)
+		.subHeader.-banner
+			h2.subHeader__title= text
+	- else
+		.subHeader
+			h2.subHeader__title= text
+
+mixin banner(src, title, subtitle)
+	.banner
+		img(src= src, alt="").banner__image
+		h1.banner__title= title
+		span.banner__titleSub= subtitle
