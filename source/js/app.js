@@ -6,7 +6,8 @@ window.onload = () => {
   galeryShowMorePhoto();
   galeryMaximizePhoto();
   serviceFQA();
-  // sideMenu();
+  modalWindow(document.getElementsByClassName('btnConsult'), true);
+  modalWindow(document.getElementsByClassName('header__call')[0]);
 };
 
 var slider = () => {
@@ -137,14 +138,32 @@ var serviceFQA = () => {
     });
   }
 };
-// var sideMenu = () => {
-//   if (document.getElementsByClassName('sideMenu')[0]) {
-//     Array.from(document.getElementsByClassName('sideMenu__link')).forEach(element => {
-//       element.onclick = (e) => {
-//         e.preventDefault();
-//         var href = e.target.getAttribute('href');
-//         document.getElementById(href).scrollIntoView();
-//       };
-//     });
-//   }
-// };
+var modalWindow = (el, array) => {
+
+  var _open = () => {
+    var modal = document.getElementsByClassName('modal')[0];
+    modal.style.display = "flex";
+    modal.style.opacity = 1;
+  };
+  var _close = () => {
+    var modal = document.getElementsByClassName('modal')[0];
+    modal.style.display = "none";
+    modal.style.opacity = 0;
+  };
+
+  if (array === true) {
+    Array.from(el).forEach(element => {
+      element.onclick = () => {
+        _open();
+      };
+    });
+  } else {
+    el.onclick = () => {
+      _open();
+    }
+  }
+
+  document.getElementsByClassName('modal__close')[0].onclick = () => {
+    _close();
+  };
+};
