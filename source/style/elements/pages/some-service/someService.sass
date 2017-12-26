@@ -1,0 +1,86 @@
+.someService
+  width: 100%
+  & > .mainContent    
+    & > button
+      margin-bottom: 3.75rem
+    & > .btnConsult
+      min-width: 275px
+    & .title-bg
+      text-align: left
+  &__description
+    padding-top: 15px
+    &Item
+      margin-bottom: 2.5rem
+      & > h3
+        color: $mBlue
+        margin-bottom: 10px
+      & > p
+        line-height: 1.5
+  & .banner__title
+    left: 225px
+  & .banner__titleSub
+    left: 225px
+    max-width: 435px
+  &__priceTable
+    margin-bottom: 2.5rem
+    & > .title-bg
+      margin-bottom: 2.5rem
+  &__FAQ
+    &Item
+      overflow: hidden
+      & > .someService__FAQQuestion
+        border: 1px solid $mGrey
+        border-top: none
+      &:first-child
+        & > .someService__FAQQuestion
+          border-top: 1px solid $mGrey
+      &.-active
+        & > .someService__FAQQuestion
+          &:before
+            transform: translateY(-50%) rotate(270deg)
+        & > .someService__FAQAnswer
+          height: auto
+          padding: 25px
+    &Question
+      padding: 12px 20px 12px 90px
+      color: $mBlue
+      +Roboto(bold)
+      font-size: 1.25rem
+      position: relative
+      cursor: pointer
+      &:before
+        display: block
+        content: '›'
+        position: absolute
+        top: 50%
+        transform: translateY(-50%) rotate(90deg)
+        left: 32px
+        font-size: 35px
+    &Answer
+      height: 0
+      padding: 0 25px
+      background-color: $mBlue
+      color: $white
+      & > p
+        line-height: 1.5
+        margin-bottom: 15px
+        &:last-child
+          margin-bottom: 0
+  &__result
+    &Image
+      min-width: 100%
+      min-height: 100%
+      max-height: 100%
+      width: auto
+      &Box
+        max-width: 645px
+        width: 100%
+        height: 410px
+        overflow: hidden
+        border: 1px solid $greyLight
+        box-shadow: 0 2px 5px 0 rgba(0,0,0,.2)
+  & .specialists
+    overflow: hidden
+    float: left
+    &__list
+      margin-left: -20px

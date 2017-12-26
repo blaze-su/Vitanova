@@ -2,8 +2,11 @@ mixin svgMix(svgClass, name)
 	svg(class=svgClass)
 		use(xlink:href='assets/img/sprite.svg#'+name)
 
-mixin _btnConsult(text)
-	button.btnConsult=text
+mixin _btnConsult(text, center)
+	- if (center)
+		button.btnConsult.-center=text
+	- else
+		button.btnConsult=text
 
 mixin subHeader(text, banner)
 	- if (banner)
@@ -18,3 +21,23 @@ mixin banner(src, title, subtitle)
 		img(src= src, alt="").banner__image
 		h1.banner__title= title
 		span.banner__titleSub= subtitle
+
+mixin sideMenu(array)
+	.sideMenu
+		each item in array
+			a(href='#'+item.src).sideMenu__link= item.name
+
+mixin sideShare(clr, text, time)
+	.sideShare.share__info(class=clr)
+		h2.share__name= text
+		.share__timeBox
+			+svgMix('share__timeIcon','clock')
+			.share__time= time
+
+mixin sideDiscount(text, time)
+	.sideDiscount.discount__info
+		img.discount__image(src="assets/img/sideDiscount.png", alt="")
+		h2.discount__name= text
+		.discount__timeBox
+			+svgMix('share__timeIcon','clock')
+			.discount__time= time

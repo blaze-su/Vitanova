@@ -1,0 +1,92 @@
+extends ../_template
+
+block content
+  +subHeader("О центре")
+  .container.about
+    .mainContent
+      section#about-center.about__context
+        h3.title-md Центр восстановительной и эстетической медицины часы
+        p.about__workTime часы работы с 9:00 до 20:00
+        p Наш центр реабилитации это:
+          br
+          | Команда профессионалов, мастеров своего дела. Это индивидуальный подход и внимательность. Все специалисты центра имеют высшее медицинское образование и не перестают совершенствовать свое мастерство.
+        p Новейшее оборудование. Аппараты CPM-терапии немецкого производства представленные в центре реабилитации VitaNuova делают восстановление после травм и операций легче, быстрее, а самое главное эффективней.
+        p В центре восстановительной медицины и реабилитации VitaNuova есть единственный в ЮФО аппарат Alma Lasers Harmony XL . Лечение грибка с помощью этого аппарата - это самый современный и безопасный способ лечения.
+        p Практика лечения заболеваний опорно-двигательного аппарата методами ударно-волновой терапии. Этот метод доказал свою эффективность в лечении артритов, артрозов, остеохондрозов, позвоночной грыжи и пяточной шпоры.
+        p Кабинет косметолога, процедуры пилинга (карбоновый, поверхностный Sculptura (Италия), срединный IMAGE (США)), чистки лица(ультразвуковая, атравматическая). Косметический уход за лицом.
+      section#photogalery.galery
+        h2.title-bg Фотогалеря
+        .galery__list
+          .galery__item.-bg
+            img(src="assets/img/galery/about-galery/sm/1.png", alt="").galery__photo
+            +svgMix('search', 'search')
+          .galery__item
+            img(src="assets/img/galery/about-galery/sm/2.png", alt="").galery__photo
+            +svgMix('search', 'search')
+          .galery__item
+            img(src="assets/img/galery/about-galery/sm/3.png", alt="").galery__photo
+            +svgMix('search', 'search')
+          .galery__item
+            img(src="assets/img/galery/about-galery/sm/4.png", alt="").galery__photo
+            +svgMix('search', 'search')
+          .galery__item
+            img(src="assets/img/galery/about-galery/sm/5.png", alt="").galery__photo
+            +svgMix('search', 'search')
+        button.galeryMoreBtn показать все фотографии
+      section#sertificate.about__sertificates
+        h2.title-bg Сертификаты
+        .about__sertificatesList
+          img(src="assets/img/sectificates/1.png", alt="").about__sertificatesItem
+          img(src="assets/img/sectificates/2.png", alt="").about__sertificatesItem
+          img(src="assets/img/sectificates/3.png", alt="").about__sertificatesItem
+          img(src="assets/img/sectificates/4.png", alt="").about__sertificatesItem
+          img(src="assets/img/sectificates/5.png", alt="").about__sertificatesItem
+          img(src="assets/img/sectificates/6.png", alt="").about__sertificatesItem
+      section#specialists.specialists.-index
+        h2.title-bg Специалисты
+        -
+          var specialists = [
+            {name: 'Захарова', name2: 'Диана Владимировна', src: 'assets/img/specialists/1.png', status: 'врач-дерматовенеролог'},
+            {name: 'Коротких', name2: 'Вячеслав Сергеевич', src: 'assets/img/specialists/2.png', status: 'врач-физиотерапевт'},
+            {name: 'Иванова', name2: 'Юлия Александровна', src: 'assets/img/specialists/3.png', status: 'врач-дерматовенеролог'}
+          ]
+        ul.specialists__list.swiper-specialists-3
+          .swiper-wrapper
+            each item in specialists
+              li.specialists__item.swiper-slide
+                .specialists__imagebox
+                  img(src= item.src, alt="alt").specialists__image
+                a(href="/specialist.html").specialists__name
+                  span= item.name
+                  br
+                  span= item.name2
+                span.specialists__status= item.status
+          +svgMix('swiper-button-prev','sl-prev-g')
+          +svgMix('swiper-button-next','sl-next-g')
+      section#vitanova-card.about__card
+        h2.title-bg Карты Vita Nova
+        h3 Три преимущества в одной карте!
+        p Приобретая карту VitaNuova Вы получаете дисконтную, накопительную и подарочную карту. Карта дает скидку на процедуры лазерной косметологии и лечение целлюлита методом ударно-волновой терапии, скидка по карте увеличивается в зависимости от потраченных средств. Карту можно приобрести в подарок как подарочный сертификат.
+        h3 Как получить карту?
+        p Карта выдается каждому посетителю кабинета восстановительной и эстетической медицины Vita Nuova при первом посещении. И воспользоваться ей можно уже на второй процедуре. При этом скидка по карте составляет 5%.
+        h3 Накопительная система скидок
+        p Первоначальная скидка по карте составляет 5%. После накопления на карте 30 тыс. рублей - скидка составит 7%. После накопления 70 тыс. рублей - 10%. При этом карта не является именной, а значит Вы можете передать ее другу или члену семьи, при этом Ваша скидка будет расти.
+        h3 Карта в подарок
+        p Карту VitaNuova можно приобрести в подарок, положив на нее выбранную Вами сумму (но не менее 2 000 рублей). После того, как подарочные деньги будут израсходованы, карта остается у владельца как дисконтная.
+        p Карта оснащена серийным номером. При утере или повреждении не восстанавливается.
+        p Купи подарочную карту любимой - сделай себе приятно.
+    .sideSection
+      -
+        var sideMenuArray = [
+          {name: 'О центре', src: 'about-center'},
+          {name: 'Фотогалерея', src: 'photogalery'},
+          {name: 'Сертификаты', src: 'sertificate'},
+          {name: 'Специалисты', src: 'specialists'},
+          {name: 'Карты Vita Nuova', src: 'vitanova-card'}
+        ]
+      +sideMenu(sideMenuArray)
+      block _consultForm
+        include ../common/_consultForm
+      +sideDiscount("Скидка для  студентов 15%  на эпиляцию", "до 16.мая 2016")
+      //- класс цвета задаётся через админку в зависимости от выбранного цвета (их всего 4)
+      +sideShare("-blue", "Консультация  дермато-венеролога  БЕСПЛАТНО", "до 24.мая 2016")

@@ -1,0 +1,9 @@
+block _consultForm
+  form.consultForm
+    p.consultForm__title Записатья на консултацию
+    p.consultForm__titleSub Не откладывайте на потом — запишитесь на консультацию врача сегодня
+
+    input(type="text" name="name" placeholder="Ваше имя")
+    input(type="tel" name="phone")#phone
+
+    +_btnConsult("Записаться", true)

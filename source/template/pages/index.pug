@@ -25,7 +25,7 @@ block content
               img(src= share.src, alt="").share__image
             //- класс с цветом нужна возможность редактировать из админки
             .share__innerbox.share__info(class=share.clr)
-              h2.share__name= share.name
+              a(href="/some-service.html").share__name= share.name
               .share__timeBox
                 +svgMix('share__timeIcon','clock')
                 .share__time= share.time
@@ -47,8 +47,8 @@ block content
           .service
             img(src= service.src, alt="").service__image
             .service__name
-              a(href="#").service__nameLink= service.title
-      +_btnConsult("Записаться на прием")
+              a(href="/some-service.html").service__nameLink= service.title
+      +_btnConsult("Записаться на прием", true)
     section.aboutUs
       .aboutUs__imagebox
         img(src="assets/img/aboutUs.png", alt="").aboutUs__image
@@ -68,7 +68,7 @@ block content
             li.aboutUs__item
               p.aboutUs__itemTitle= item.title
               p.aboutUs__itemText= item.text
-    section.specialists
+    section.specialists.-index
       h2.title-bg Специалисты
       -
         var specialists = [
@@ -80,18 +80,18 @@ block content
       ul.specialists__list.swiper-specialists
         .swiper-wrapper
           each item in specialists
-            li.specialist.swiper-slide
-              .specialist__imagebox
-                img(src= item.src, alt="alt").specialist__image
-              a(href="#").specialist__name
+            li.specialists__item.swiper-slide
+              .specialists__imagebox
+                img(src= item.src, alt="alt").specialists__image
+              a(href="/specialist.html").specialists__name
                 span= item.name
                 br
                 span= item.name2
-              span.specialist__status= item.status
+              span.specialists__status= item.status
         +svgMix('swiper-button-prev','sl-prev-g')
         +svgMix('swiper-button-next','sl-next-g')
-      +_btnConsult("Получить консультацию")
-    section.reviews
+      +_btnConsult("Получить консультацию", true)
+    .reviews
       h2.title-bg.reviews__title Отзывы
       -
         var reviews = [

@@ -1,0 +1,28 @@
+.reviewsBlock
+  max-width: 738px
+  & > .title-bg
+    text-align: left
+  &__list
+    margin-top: -18px
+    display: flex
+    flex-wrap: wrap
+    flex-direction: column-reverse
+    align-items: flex-end
+    justify-content: flex-end
+  &__item
+    max-width: 360px
+    width: 100%
+    padding: 25px
+    border: 1px solid $greyLight
+    margin-right: 18px
+    margin-top: 18px
+    &:hover
+      box-shadow: 0px 5px 25px 0px rgba($black, 0.3)
+      .reviewsBlock__itemText
+        color: $black
+    &Name
+      color: $mBlue
+      +Roboto(bold)
+    &Date
+    &Text
+      margin-top: 25px

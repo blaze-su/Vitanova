@@ -4,11 +4,14 @@ block content
   +subHeader("Прайс - лист", true)
   .container.pricesPage
     +banner("assets/img/banner/laser.png", "Лазерная ЭПИЛЯЦИЯ", "Без боли")
-    .pricesPage__list
+    //- на этой страница необходимо чтоб к элементу с классом .pricesPage__item
+    //- добавлялся id с таким же что и src ссылки с классом .sideMenu__link на этой странице
+    .mainContent
       -
         var tableInfo = [
           {
             title: 'Уход за лицом',
+            titleCODE: 'yxod-za-licom',
             tableName: 'Лоб',
             rowInfo: [
               {number: 1, name: "Лоб", price: 2000},
@@ -19,6 +22,7 @@ block content
           },
           {
             title: 'Контурная пластика',
+            titleCODE: 'conturnaya-plastika',
             tableName: 'Лоб',
             rowInfo: [
               {number: 1, name: "Лоб", price: 2000},
@@ -33,7 +37,7 @@ block content
           }
         ]
       each item in tableInfo
-        .pricesPage__item
+        .pricesPage__item(id= item.titleCODE)
           h3.title-bg= item.title
           table
             thead
@@ -58,3 +62,15 @@ block content
                     td= itemTable.number
                     td.-name= itemTable.name
                     td= itemTable.price
+    .sideSection
+      -
+        var sideMenuArray = [
+          {name: 'Уход за лицом', src: 'yxod-za-licom'},
+          {name: 'Контурная пластика', src: 'conturnaya-plastika'}
+        ]
+      +sideMenu(sideMenuArray)
+      block _consultForm
+        include ../common/_consultForm
+      +sideDiscount("Скидка для  студентов 15%  на эпиляцию", "до 16.мая 2016")
+      //- класс цвета задаётся через админку в зависимости от выбранного цвета (их всего 4)
+      +sideShare("-blue", "Консультация  дермато-венеролога  БЕСПЛАТНО", "до 24.мая 2016")

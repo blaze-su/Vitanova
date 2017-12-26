@@ -2,21 +2,21 @@ extends ../_template
 
 block content
   +subHeader("Специалисты")
-  .container.specialistPage
-    .specialistPage__leftbox
-      .specialistPage__photobox
-        img(src="assets/img/specialist.png", alt="").specialistPage__photo
+  .container.specialist
+    .specialist__leftbox
+      .specialist__photobox
+        img(src="assets/img/specialist.png", alt="").specialist__photo
       +_btnConsult("Записаться на прием")
-      .specialistPage__schedule
+      .specialist__schedule
         h2.title-bg Расписание
-        ul.specialistPage__scheduleList
-          li.specialistPage__scheduleItem Пн - с 12:00 - 16:00
-          li.specialistPage__scheduleItem Ср - с 10:00 - 14:00
-          li.specialistPage__scheduleItem Вс - с 10:00 - 14:00
-    .specialistPage__rightbox
-      p.specialistPage__title Захарова Диана Владимировна
-      p.specialistPage__titleSub врач-дерматовенеролог
-      .specialistPage__text
+        ul.specialist__scheduleList
+          li.specialist__scheduleItem Пн - с 12:00 - 16:00
+          li.specialist__scheduleItem Ср - с 10:00 - 14:00
+          li.specialist__scheduleItem Вс - с 10:00 - 14:00
+    .specialist__rightbox
+      p.specialist__title Захарова Диана Владимировна
+      p.specialist__titleSub врач-дерматовенеролог
+      .specialist__text
         p в 2009 г. окончила Кубанский Государственный медицинский Университет, лечебный факультет.
         p в 2011г. прошла клиническую ординатуру по специальности «дерматовенерология» на базе ККВД.
         p в 2011-2012г. Специализация по профилю «косметология», 576ч. Санкт-Петербургский Государственный медицинский Университет им. Павлова.
@@ -24,8 +24,8 @@ block content
         p 2016г. Повышение квалификации по специальности «дерматовенерология», 144ч.
         p Является сертифицированным специалистом по всем современным методам эстетической коррекции и коррекции возрастных изменений в косметологии, постоянно повышает свою квалификацию, участник семинаров, конгрессов, форумов по эстетической медицине.
       
-      p.specialistPage__title Основные направления в работе:
-      .specialistPage__text
+      p.specialist__title Основные направления в работе:
+      .specialist__text
         p различные виды лазерной терапии (омоложение, шлифовка, лечение пигментации, сосудистых     образований, онихомикоза, лазерная эпиляция, удаление кожных новообразований)
         p основные инъекционные методы (контурная пластика, объемное моделирование, ботулинотерапия, биоревитализация, мезотерапия ) аппаратные процедуры (микротоки, ультразвук, УВТ и т.д.)
         p нитевые методики омоложения ( APTOS, мезонити)
@@ -33,48 +33,48 @@ block content
         p трихологическая консультация
         p плазмотерапевтические методы лечения
 
-      .specialistPage__galery
+      .galery
         h2.title-bg Фотогалеря
-        .specialistPage__galeryList
-          .specialistPage__galeryItem
-            img(src="assets/img/specialist-galery/1.png", alt="").specialistPage__galeryPhoto
+        .galery__list
+          .galery__item
+            img(src="assets/img/galery/specialist-galery/sm/1.png", alt="").galery__photo
             +svgMix('search', 'search')
-          .specialistPage__galeryItem
-            img(src="assets/img/specialist-galery/2.png", alt="").specialistPage__galeryPhoto
+          .galery__item
+            img(src="assets/img/galery/specialist-galery/sm/2.png", alt="").galery__photo
             +svgMix('search', 'search')
-          .specialistPage__galeryItem
-            img(src="assets/img/specialist-galery/3.png", alt="").specialistPage__galeryPhoto
+          .galery__item
+            img(src="assets/img/galery/specialist-galery/sm/3.png", alt="").galery__photo
             +svgMix('search', 'search')
-          .specialistPage__galeryItem
-            img(src="assets/img/specialist-galery/4.png", alt="").specialistPage__galeryPhoto
+          .galery__item
+            img(src="assets/img/galery/specialist-galery/sm/4.png", alt="").galery__photo
             +svgMix('search', 'search')
-          .specialistPage__galeryItem
-            img(src="assets/img/specialist-galery/1.png", alt="").specialistPage__galeryPhoto
+          .galery__item
+            img(src="assets/img/galery/specialist-galery/sm/1.png", alt="").galery__photo
             +svgMix('search', 'search')
-          .specialistPage__galeryItem
-            img(src="assets/img/specialist-galery/2.png", alt="").specialistPage__galeryPhoto
+          .galery__item
+            img(src="assets/img/galery/specialist-galery/sm/2.png", alt="").galery__photo
             +svgMix('search', 'search')
-          .specialistPage__galeryItem
-            img(src="assets/img/specialist-galery/3.png", alt="").specialistPage__galeryPhoto
+          .galery__item
+            img(src="assets/img/galery/specialist-galery/sm/3.png", alt="").galery__photo
             +svgMix('search', 'search')
-          .specialistPage__galeryItem
-            img(src="assets/img/specialist-galery/4.png", alt="").specialistPage__galeryPhoto
+          .galery__item
+            img(src="assets/img/galery/specialist-galery/sm/4.png", alt="").galery__photo
             +svgMix('search', 'search')
-        span.specialistPage__galeryMoreBtn ЕЩЕ ФОТО
+        button.galeryMoreBtn ЕЩЕ ФОТО
       
-      .specialistPage__review
+      .reviewsBlock
         h2.title-bg Отзывы о процедуре
 
         -
           var reviews = [
             {name: 'Евгений', date: '11 ноября 2016 г.', text: 'Делал пластику уздечки, врач Мамедов Халит. Спасибо врачу и клинике, все прошло просто и быстро. Долго готовился, боялся, а оказалось 10 минут и готово, спасибо'},
-            {name: 'Иван', date: '21 ноября 2016 г.', text: 'Сделал татуировку в молодости. Переживал за не презентабельный внешний вид, тем более что татуировку было видно из-под рубашки. Обратился в Лазмед. За 4 сеанса мне полностью ее вывели!'},
+            {name: 'Иван', date: '21 ноября 2016 г.', text: 'LOL'},
             {name: 'Максим', date: '23 ноября 2016 г.', text: 'Отличный центр. Высококлассные специалисты(по крайней мере удаляющие бородавки) Спасибо Вам большое!'},
             {name: 'Александр', date: '28 ноября 2016 г.', text: 'Сделал татуировку в молодости. Переживал за не презентабельный внешний вид, тем более что татуировку было видно из-под рубашки. Обратился в Лазмед. За 4 сеанса мне полностью ее вывели!'}
           ]
-        .specialistPage__reviewList
+        .reviewsBlock__list#reviewsPlate
           each item in reviews
-            .specialistPage__reviewItem
-              p.specialistPage__reviewItemName= item.name
-              span.specialistPage__reviewItemDate= item.date
-              p.specialistPage__reviewItemText= item.text
+            .reviewsBlock__item
+              p.reviewsBlock__itemName= item.name
+              span.reviewsBlock__itemDate= item.date
+              p.reviewsBlock__itemText= item.text

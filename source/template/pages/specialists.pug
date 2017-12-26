@@ -1,0 +1,23 @@
+extends ../_template
+
+block content
+  +subHeader("Специалисты")
+  section.specialists
+    .container
+      -
+        var specialists = [
+          {name: 'Захарова', name2: 'Диана Владимировна', src: 'assets/img/specialists/1.png', status: 'врач-дерматовенеролог'},
+          {name: 'Коротких', name2: 'Вячеслав Сергеевич', src: 'assets/img/specialists/2.png', status: 'врач-физиотерапевт'},
+          {name: 'Иванова', name2: 'Юлия Александровна', src: 'assets/img/specialists/3.png', status: 'врач-дерматовенеролог'},
+          {name: 'Осташевская', name2: 'Юлия Борисовна', src: 'assets/img/specialists/4.png', status: 'врач-дерматовенеролог'}
+        ]
+      ul.specialists__list
+        each item in specialists
+          li.specialists__item
+            .specialists__imagebox
+              img(src= item.src, alt="alt").specialists__image
+            .specialists__info
+              a(href="/specialist.html").specialists__name= item.name + ' ' + item.name2
+              span.specialists__status= item.status
+              a(href="/specialist.html").specialists__link Подробнее
+      +_btnConsult("Записаться на прием", true)
