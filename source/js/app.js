@@ -127,6 +127,16 @@ var maskPhone = () => {
       separator: '+7()-'
     });
   }
+  if (document.getElementById('phoneModal')) {
+    var _phone = document.getElementById('phoneModal');
+    var _format = '+7(___)___-__-__';
+    _phone.value = _format;
+    MaskedInput({
+      elm: _phone,
+      format: _format,
+      separator: '+7()-'
+    });
+  }
 };
 var serviceFQA = () => {
   if (document.getElementsByClassName('someService__FAQ')[0]) {
@@ -153,12 +163,14 @@ var modalWindow = (el, array) => {
 
   if (array === true) {
     Array.from(el).forEach(element => {
-      element.onclick = () => {
+      element.onclick = (e) => {
+        e.preventDefault();
         _open();
       };
     });
   } else {
-    el.onclick = () => {
+    el.onclick = (e) => {
+      e.preventDefault();
       _open();
     }
   }

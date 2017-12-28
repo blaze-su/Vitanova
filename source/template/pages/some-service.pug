@@ -87,7 +87,7 @@ block content
               p.reviewsBlock__itemName= item.name
               span.reviewsBlock__itemDate= item.date
               p.reviewsBlock__itemText= item.text
-      section#specialists.specialists
+      section#specialists.specialists.-index
         h2.title-bg Специалисты
         -
           var specialists = [
@@ -96,14 +96,14 @@ block content
           ]
         ul.specialists__list
           each item in specialists
-            li.specialist
-              .specialist__imagebox
-                img(src= item.src, alt="alt").specialist__image
-              a(href="#").specialist__name
+            li.specialists__item
+              .specialists__imagebox
+                img(src= item.src, alt="alt").specialists__image
+              a(href="#").specialists__name
                 span= item.name
                 br
                 span= item.name2
-              span.specialist__status= item.status
+              span.specialists__status= item.status
         +_btnConsult("Получить консультацию", true)
     .sideSection
       -

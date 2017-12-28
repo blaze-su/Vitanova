@@ -32,8 +32,16 @@ html
       include common/_map.pug
 
     .modal
-      block modal
-        include common/_consultForm.pug
+      form.modalForm
+        p.modalForm__title Записатья на консултацию
+        p.modalForm__titleSub Не откладывайте на потом — запишитесь на консультацию врача сегодня
+
+        input(type="text" name="name" placeholder="Ваше имя")
+        input(type="tel" name="phone")#phoneModal
+
+        +_btnConsult("Записаться", true)
+
+        span.modal__close x
 
     block footer
       include common/_footer.pug

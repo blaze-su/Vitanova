@@ -29,7 +29,7 @@ mixin sideMenu(array)
 
 mixin sideShare(clr, text, time)
 	.sideShare.share__info(class=clr)
-		h2.share__name= text
+		a(href="#").share__name= text
 		.share__timeBox
 			+svgMix('share__timeIcon','clock')
 			.share__time= time
@@ -37,7 +37,7 @@ mixin sideShare(clr, text, time)
 mixin sideDiscount(text, time)
 	.sideDiscount.discount__info
 		img.discount__image(src="assets/img/sideDiscount.png", alt="")
-		h2.discount__name= text
+		a(href="#").discount__name= text
 		.discount__timeBox
 			+svgMix('share__timeIcon','clock')
 			.discount__time= time
