@@ -8,6 +8,18 @@
   max-width: 280px
   max-height: 280px
   width: 100%
+  @include w1159
+    max-width: 246px
+    max-height: 246px
+  @include w1023
+    max-width: 242px
+    max-height: 242px
+  @include w767
+    max-width: 230px
+    max-height: 230px
+  @include w479
+    max-width: 155px
+    max-height: 155px
   &__name
     position: absolute
     bottom: 0
@@ -16,6 +28,8 @@
     height: 84px
     background-color: rgba($mBlueDark, 0.702)
     display: flex
+    @include w1159
+      height: 65px
     &Link
       color: $white
       text-align: center
@@ -25,4 +39,6 @@
       padding: 0 10px
       &:hover
         color: $yellow
+      @include w1023
+        font-size: 1.125rem
     

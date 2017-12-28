@@ -1,10 +1,12 @@
 .social
+  display: flex
+  @include w1023
+    justify-content: center
   &__link
     display: block
     width: 36px
     height: 36px
     margin-right: 10px
-    float: left
     &:last-child
       margin-right: 0
 
@@ -14,6 +16,8 @@
   margin-top: 6px
   position: relative
   color: $white
+  @include w1023
+    padding-top: 0
   &:before
     position: absolute
     display: block
@@ -23,12 +27,28 @@
     background-color: $mBlue
     top: -6px
     left: 0
-  &__case
+  & .container
     max-width: 1070px
     width: 100%
     margin: 0 auto
-    & > div, ul
+    &:after
+      display: block
+      content: ''
+      clear: both
+    & > div
       float: left
+      @include w1023
+        width: 50%
+        margin-top: 40px
+      @include w479
+        width: 100%
+    @include w1023
+      display: flex
+      flex-wrap: wrap
+      text-align: center
+    @include w479
+      flex-direction: column
+
   &__contacts
     width: 30%
   &__address
@@ -44,10 +64,10 @@
     &Title
       font-family: 'RobotoBold' !important
       letter-spacing: 1px
+      margin-bottom: 5px
   &__visa
     width: 20%
     text-align: center
-    margin-bottom: 25px
     & > img
       margin-top: 10px
       width: 180px
@@ -55,14 +75,13 @@
   &__blaze
     width: 20%
     text-align: center
+    margin-top: 25px
     &Link
       margin: auto
-      display: flex
-      flex-wrap: wrap
-      justify-content: center
       & > img
         width: auto
         height: auto
       & > span
         margin-top: 5px
         font-size: 12px
+        display: block

@@ -6,29 +6,63 @@
   box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2)
   border: 1px solid rgb(224, 224, 224)
   float: left
+  @include w1159
+    max-width: 484px
+    width: 100%
+    height: 225px
+  @include w1023
+    max-width: calc(50% - 15px)
+    display: flex
+    flex-direction: column
+    height: auto
+  @include w767
+    flex-direction: row
+    max-width: 100%
+    margin-left: 0
+    margin-right: 0
+  @include w479
+    flex-direction: column
   &s
     &__innercase
       margin: 0 -7.5px -15px
       display: flex
       flex-wrap: wrap
+      @include w479
+        margin: 0
   &__innerbox
     width: 50%
     height: 100%
     float: left
     overflow: hidden
+    @include w1023
+      width: 100%
+      height: 190px
+    @include w479
+      height: 170px
   &__image
     max-width: none
     min-width: 100%
     min-height: 100%
+    max-height: 100%
     width: auto
-    height: auto
   &__info
-    padding: 40px 15px 12px 25px
+    padding: 40px 15px 85px 25px
     color: $white
     display: flex
     flex-wrap: wrap
     align-content: space-between
     justify-content: flex-end
+    position: relative
+    @include w1159
+      padding: 15px
+      padding-bottom: 88px
+    @include w1023
+      padding-bottom: 75px
+      height: 178px
+    @include w767
+      height: auto
+      padding: 10px
+      padding-bottom: 75px
     &.-pink
       background-color: $pink
       & > .share__timeBox
@@ -50,12 +84,18 @@
     width: 100%
     +Roboto(bold)
     font-size: 1.625rem
+    overflow: hidden
+    @include w1159
+      font-size: 1.25rem
   &__time
     &Box
       display: flex
       align-items: center
       border-radius: 25px
       padding: 5px 15px 5px 5px
+      position: absolute
+      right: 15px
+      bottom: 15px
     &Icon
       width: 37px
       height: 34px

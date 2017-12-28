@@ -13,9 +13,9 @@ window.onload = () => {
 var slider = () => {
   if (document.getElementsByClassName('swiper-container')[0]) {
     var mySwiper = new Swiper('.swiper-container', {
-      autoplay: {
-        delay: 3000,
-      },
+      // autoplay: {
+      //   delay: 3000,
+      // },
       pagination: {
         el: '.swiper-pagination',
         clickable: true
@@ -23,13 +23,13 @@ var slider = () => {
       loop: true
     });
     var _slider = document.getElementsByClassName('swiper-wrapper')[0];
-    var slideW = parseInt(document.getElementsByClassName('swiper-slide')[0].style.width);
-    _slider.style.width = (document.getElementsByClassName('swiper-slide').length + 1) * slideW + 'px';
+    var slideW = parseInt(document.getElementsByClassName('slider__innerbox')[0].style.width);
+    _slider.style.width = (document.getElementsByClassName('slider__innerbox').length + 1) * slideW + 'px';
     document.getElementsByClassName('swiper-container')[0].classList.remove("-noVisible");
   }
   if (document.getElementsByClassName('swiper-specialists')[0]) {
     var mySwiper = new Swiper('.swiper-specialists', {
-      slidesPerView: 4,
+      slidesPerView: 'auto',
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
@@ -38,7 +38,7 @@ var slider = () => {
   }
   if (document.getElementsByClassName('swiper-specialists-3')[0]) {
     var mySwiper = new Swiper('.swiper-specialists-3', {
-      slidesPerView: 3,
+      slidesPerView: 'auto',
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
@@ -47,7 +47,7 @@ var slider = () => {
   }
   if (document.getElementsByClassName('swiper-reviews')[0]) {
     var mySwiper = new Swiper('.swiper-reviews', {
-      slidesPerView: 3,
+      slidesPerView: 'auto',
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',

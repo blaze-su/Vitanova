@@ -36,13 +36,31 @@
     & > .btnConsult
       position: absolute
       right: 95px
-      bottom: 30px
+      bottom: 50px
+      @include w1023
+        right: 50%
+        bottom: 35%
+        transform: translate(50%, 50%)
+      @include w767
+        bottom: 40%
+      @include w479
+        bottom: 55%
+        right: 25%
+        transform: translate(15%, 50%)
   &__text
     position: absolute
     top: 50px
     right: 95px
     & *
       color: $mBlue
+    @include w1023
+      top: 20%
+      right: 50%
+      transform: translate(50%, -50%)
+      width: 100%
+      text-align: center
+    @include w479
+      display: none
   &__desc
     font-family: 'RobotoRegular'
   

@@ -23,6 +23,8 @@ h1
     color: $greyMostDark
     &.title-lg
         text-align: center
+    @include w767
+        font-size: 1.75rem
 h2
     +Roboto(bold)
     font-size: 1.625rem
@@ -30,12 +32,18 @@ h2
     &.title-bg
         margin-bottom: 2.188rem
         text-align: center
+        @include w1023
+            margin-bottom: 1.75rem
+        @include w767
+            font-size: 1.625rem
 h3
     +Roboto(bold)
     font-size: 1.25rem
     color: $greyMostDark
     &.title-md
         text-align: center
+    @include w767
+        font-size: 1.125rem
 
 html
     font: 16px 'RobotoRegular'
@@ -43,6 +51,10 @@ html
     width: 100%
     height: auto
     color: $mGrey
+    @include w1023
+        font-size: 15px
+    @include w767
+        font-size: 14px
 
 
 body
@@ -70,15 +82,30 @@ li
 
 section
     margin-bottom: 3.75rem
+    @include w1023
+        margin-bottom: 2.5rem
+    @include w767
+        margin-bottom: 1.75rem
 
 button
     cursor: pointer
 
 .container
-    max-width: 1120px
+    max-width: 1160px
     width: 100%
     margin: 0 auto
     flex: 1
+    padding: 0 20px
+    @include w1159
+        max-width: 1024px
+    @include w1023
+        max-width: 768px
+    @include w767
+        max-width: 480px
+        padding: 0 10px
+    @include w479
+        padding: 0 5px
+        max-width: 320px
 
 .mainContent
     max-width: 815px
@@ -96,4 +123,4 @@ button
 .map
     iframe
         width: 100%
-        height: 40vw
+        height: 50vw
