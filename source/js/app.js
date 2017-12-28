@@ -149,16 +149,18 @@ var serviceFQA = () => {
   }
 };
 var modalWindow = (el, array) => {
+  var modal = document.getElementsByClassName('modal')[0];
 
-  var _open = () => {
-    var modal = document.getElementsByClassName('modal')[0];
+  var _open = () => {    
     modal.style.display = "flex";
     modal.style.opacity = 1;
   };
   var _close = () => {
-    var modal = document.getElementsByClassName('modal')[0];
     modal.style.display = "none";
     modal.style.opacity = 0;
+  };
+  var _valid = () => {
+    return true;
   };
 
   if (array === true) {
@@ -177,5 +179,22 @@ var modalWindow = (el, array) => {
 
   document.getElementsByClassName('modal__close')[0].onclick = () => {
     _close();
+  };
+
+  document.getElementsByClassName('modal__submit')[0].onclick = e => {
+    var _modal = document.getElementsByClassName('modalForm')[0];
+    e.preventDefault();
+    var valid = _valid();
+    if (valid !== true) return false
+    _modal.classList.add('-send');
+    var _send = document.createElement('h2');
+    _send.className = "modal__send"
+    _send.innerHTML = "Заявка отправленна"
+    _modal.appendChild(_send);
+    setTimeout(() => {
+      _close();
+      _modal.classList.remove('-send');
+      _modal.removeChild(_send);
+    }, 2000);
   };
 };

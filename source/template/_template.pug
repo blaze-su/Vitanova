@@ -33,15 +33,15 @@ html
 
     .modal
       form.modalForm
+        span.modal__close x
+
         p.modalForm__title Записатья на консултацию
         p.modalForm__titleSub Не откладывайте на потом — запишитесь на консультацию врача сегодня
 
         input(type="text" name="name" placeholder="Ваше имя")
         input(type="tel" name="phone")#phoneModal
 
-        +_btnConsult("Записаться", true)
-
-        span.modal__close x
+        button.modal__submit Записаться
 
     block footer
       include common/_footer.pug

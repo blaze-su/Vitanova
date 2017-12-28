@@ -42,7 +42,18 @@
     right: 8px
     font-size: 25px
     cursor: pointer
+  &__send
+    display: block !important
+    color: $mBlueDark
+  &__submit
+    @extend .btnConsult
+    position: relative
+    left: 50%
+    transform: translateX(-50%)
   & > form
     margin: auto
     max-width: 300px
     background-color: $white
+    &.-send
+      & > *
+        display: none
