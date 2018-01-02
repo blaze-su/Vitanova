@@ -5,7 +5,7 @@ let babel = require('gulp-babel');
 
 module.exports = () => {
     $.gulp.task('copy:javascripts', () => {
-        return $.gulp.src('./source/js/*.js', { since: $.gulp.lastRun('copy:javascripts') })
+        return $.gulp.src('./source/js/app.js', { since: $.gulp.lastRun('copy:javascripts') })
             .pipe(babel({
                 presets: ['env']
             }))

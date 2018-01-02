@@ -1,5 +1,6 @@
 .side
   &Menu
+    max-width: 265px
     width: 100%
     margin-bottom: 15px
     &__link
@@ -30,20 +31,35 @@
           background-color: $yellowDark
   &Section
     max-width: 265px
+    min-width: 265px
     width: 100%
-    float: right
+    @include w1023
+      max-width: 545px
+      display: flex
+      flex-wrap: wrap
+      justify-content: space-between
+      margin: 0 auto
+    @include w767
+      max-width: 265px
   &Share
+    max-width: 265px
+    width: 100%
     padding-top: 30px !important
     margin-bottom: 15px
     box-shadow: 0px 2px 5px 0px rgba($black, 0.2)
     border: 1px solid $greyLight
+    @include w767
+      display: none !important
     & > .share__timeBox
       margin-top: 35px
   &Discount
+    max-width: 265px  
     padding-top: 30px !important
     border: 1px solid $greyLight
     position: relative
     margin-bottom: 15px
+    @include w767
+      display: none
     &:after
       z-index: 0
       position: absolute

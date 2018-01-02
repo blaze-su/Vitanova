@@ -2,6 +2,14 @@
   padding: 42px 0
   background-color: $mBlue
   margin-bottom: 45px
+  @include w1023
+    padding-left: 10px
+    padding-right: 10px
+  @include w767
+    padding: 21px 0
+    margin-bottom: 15px
+  @include w479
+    text-align: center
   &.-banner
     margin-bottom: 0
   &__title

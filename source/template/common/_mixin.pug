@@ -2,25 +2,34 @@ mixin svgMix(svgClass, name)
 	svg(class=svgClass)
 		use(xlink:href='assets/img/sprite.svg#'+name)
 
-mixin _btnConsult(text, center)
-	- if (center)
-		button.btnConsult.-center=text
+mixin _btnConsult(text, center, modal)
+	- if (modal === true)
+		- if (center === true)
+			button.btnConsult.-center=text
+		- else
+			button.btnConsult=text
 	- else
-		button.btnConsult=text
+		- if (center === true)
+			button.btnConsult.-center.-nomodal=text
+		- else
+			button.btnConsult.-nomodal=text
 
 mixin subHeader(text, banner)
 	- if (banner)
 		.subHeader.-banner
-			h2.subHeader__title= text
+			.container
+				h2.subHeader__title= text
 	- else
 		.subHeader
-			h2.subHeader__title= text
+			.container
+				h2.subHeader__title= text
 
 mixin banner(src, title, subtitle)
-	.banner
+	.banner.container
 		img(src= src, alt="").banner__image
-		h1.banner__title= title
-		span.banner__titleSub= subtitle
+		.banner__info
+			h1.banner__title= title
+			span.banner__titleSub= subtitle
 
 mixin sideMenu(array)
 	.sideMenu

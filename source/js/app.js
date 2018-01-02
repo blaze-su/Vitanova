@@ -13,9 +13,9 @@ window.onload = () => {
 var slider = () => {
   if (document.getElementsByClassName('swiper-container')[0]) {
     var mySwiper = new Swiper('.swiper-container', {
-      // autoplay: {
-      //   delay: 3000,
-      // },
+      autoplay: {
+        delay: 3000,
+      },
       pagination: {
         el: '.swiper-pagination',
         clickable: true
@@ -36,8 +36,8 @@ var slider = () => {
       }
     });
   }
-  if (document.getElementsByClassName('swiper-specialists-3')[0]) {
-    var mySwiper = new Swiper('.swiper-specialists-3', {
+  if (document.getElementsByClassName('swiper-specialists-about')[0]) {
+    var mySwiper = new Swiper('.swiper-specialists-about', {
       slidesPerView: 'auto',
       navigation: {
         nextEl: '.swiper-button-next',
@@ -63,9 +63,9 @@ var review = () => {
     var plateItem = plate.children;
     for (let i = 0; i < plateItem.length; i++) {
       var el = plateItem[i];
-      if (i < plateItem.length/2) {
+      if (i < plateItem.length / 2) {
         h1 += el.offsetHeight + parseInt(getComputedStyle(el).marginTop);
-      }else{
+      } else {
         h2 += el.offsetHeight + parseInt(getComputedStyle(el).marginTop);
       }
     }
@@ -74,8 +74,15 @@ var review = () => {
   };
 
   if (document.getElementById('reviewsPlate')) {
+    window.onresize = () => {
+      if (window.outerWidth <= 1100) {
+        document.getElementById('reviewsPlate').removeAttribute('style');
+        return false
+      }
+      _autoHeight();
+    };
+    if (window.outerWidth <= 1100) return false
     _autoHeight();
-    window.onresize = () => { _autoHeight(); };
   }
 };
 var galeryShowMorePhoto = () => {
@@ -91,7 +98,7 @@ var galeryMaximizePhoto = () => {
     Array.from(document.getElementsByClassName('galery__item')).forEach(element => {
       element.onclick = (e) => {
         var src = element.getElementsByClassName('galery__photo')[0].getAttribute('src');
-        src = src.replace("sm","fs");
+        src = src.replace("sm", "fs");
         var alt = element.getElementsByClassName('galery__photo')[0].getAttribute('alt');
 
         var PhotoBox = document.createElement('div');
@@ -107,11 +114,15 @@ var galeryMaximizePhoto = () => {
 
         PhotoBox.onclick = () =>
           document.getElementsByClassName('galery')[0].removeChild(PhotoBox);
-        
-        Photo.onmouseover = () => PhotoBox.onclick = () => { return false };
+
+        Photo.onmouseover = () => PhotoBox.onclick = () => {
+          return false
+        };
 
         Photo.onmouseout = () =>
-          PhotoBox.onclick = () => { document.getElementsByClassName('galery')[0].removeChild(PhotoBox); };
+          PhotoBox.onclick = () => {
+            document.getElementsByClassName('galery')[0].removeChild(PhotoBox);
+          };
       }
     });
   }
@@ -151,7 +162,7 @@ var serviceFQA = () => {
 var modalWindow = (el, array) => {
   var modal = document.getElementsByClassName('modal')[0];
 
-  var _open = () => {    
+  var _open = () => {
     modal.style.display = "flex";
     modal.style.opacity = 1;
   };
@@ -167,12 +178,14 @@ var modalWindow = (el, array) => {
     Array.from(el).forEach(element => {
       element.onclick = (e) => {
         e.preventDefault();
+        if (element.classList.contains('-nomodal')) return false
         _open();
       };
     });
   } else {
     el.onclick = (e) => {
       e.preventDefault();
+      if (el.classList.contains('-nomodal')) return false
       _open();
     }
   }

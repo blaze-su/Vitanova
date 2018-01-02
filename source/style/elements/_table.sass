@@ -16,54 +16,95 @@ tbody
       background-color: $yellow
       & > td.-name
         position: relative
+        padding-right: 100px
+        word-break: break-word
+        @include w767
+          padding-right: 95px
+        @include w479
+          padding: 50px 5px 5px
         & > span
           position: absolute
-          right: 0
-          top: 0
+          right: 1px
+          top: 50%
+          transform: translateY(-50%)
+          height: 40.5px
+          border-bottom: 0.5px solid $greyDark
+          border-top: 0.5px solid $greyDark
           width: 60px
-          height: 100%
           background-color: $white
           display: flex
           align-items: center
-          color: $yellow
+          color: $mGrey
           font-size: 20px
+          @include w1023
+            height: 39.5px
+          @include w767
+            height: 36.5px
+          @include w479
+            top: 1px
+            transform: translate(0, 0)
+            border: none
+            width: calc(100% - 1px)
+            display: flex
+            justify-content: center
           &:before
             position: absolute
             content: ''
             display: block
-            left: 0
-            top: 0
+            left: 1px
+            top: 50%
             border: 19.5px solid transparent
             border-right: 25px solid $white
-            transform: translateX(-100%)
+            transform: translate(-100%, -50%)
             z-index: 1
+            @include w1023
+              border: 18.5px solid transparent
+              border-right: 25px solid $white
+            @include w767
+              border: 17.5px solid transparent
+              border-right: 25px solid $white
+            @include w479
+              display: none
           &:after
             z-index: 0
             position: absolute
             content: ''
             display: block
-            left: -1px
-            top: 0
-            border: 19.5px solid transparent
+            left: 0
+            top: 50%
+            border: 20px solid transparent
             border-right: 25px solid $greyDark
-            transform: translateX(-100%)
+            transform: translate(-100%, -50%)
+            @include w1023
+              border: 19px solid transparent
+              border-right: 25px solid $greyDark
+            @include w767
+              border: 18px solid transparent
+              border-right: 25px solid $greyDark
+            @include w479
+              display: none
   & td.-name
-      justify-content: flex-start
+    justify-content: flex-start
 tr
   display: flex
   border: 0.5px solid $greyDark
   border-bottom: none
   border-right: none
-  max-height: 2.5rem
 td
   border-right: 0.5px solid $greyDark
-  padding: 0 20px
+  padding: 5px 20px
   display: flex
   justify-content: center
   align-items: center
-  height: 2.49rem
+  min-height: 2.5rem
   flex: 1
+  @include w767
+    padding: 5px 10px
   &:first-child
     max-width: 75px
+    @include w767
+      max-width: 40px
   &:last-child
     max-width: 150px
+    @include w767
+      max-width: 90px

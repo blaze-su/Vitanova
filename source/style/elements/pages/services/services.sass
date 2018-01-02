@@ -1,7 +1,11 @@
 .servicesPage
+  @include w479
+    text-align: center
   &__description
     margin-top: 3.75rem
     max-width: 1025px
+    @include w1023
+      margin-top: 1.75rem
     &Title
       color: $mBlue
     &TitleSub
@@ -9,3 +13,7 @@
     & p
       margin-top: 25px
       line-height: 1.5
+  & .btnConsult
+    @include w479
+      left: auto !important
+      transform: none !important

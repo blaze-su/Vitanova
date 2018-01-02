@@ -26,9 +26,38 @@
       </div>
     </header>
     <div class="subHeader">
-      <h2 class="subHeader__title">О центре</h2>
+      <div class="container">
+        <h2 class="subHeader__title">О центре</h2>
+      </div>
     </div>
     <div class="container about">
+      <div class="sideSection">
+        <div class="sideMenu"><a class="sideMenu__link" href="#about-center">О центре</a><a class="sideMenu__link" href="#photogalery">Фотогалерея</a><a class="sideMenu__link" href="#sertificate">Сертификаты</a><a class="sideMenu__link" href="#specialists">Специалисты</a><a class="sideMenu__link" href="#vitanova-card">Карты Vita Nuova</a>
+        </div>
+        <form class="consultForm">
+          <p class="consultForm__title">Записатья на консултацию</p>
+          <p class="consultForm__titleSub">Не откладывайте на потом — запишитесь на консультацию врача сегодня</p>
+          <input type="text" name="name" placeholder="Ваше имя">
+          <input type="tel" name="phone" id="phone">
+          <button class="btnConsult -center -nomodal">Записаться</button>
+        </form>
+        <div class="sideDiscount discount__info"><img class="discount__image" src="assets/img/sideDiscount.png" alt=""/><a class="discount__name" href="#">Скидка для  студентов 15%  на эпиляцию</a>
+          <div class="discount__timeBox">
+            <svg class="share__timeIcon">
+              <use xlink:href="assets/img/sprite.svg#clock"></use>
+            </svg>
+            <div class="discount__time">до 16.мая 2016</div>
+          </div>
+        </div>
+        <div class="sideShare share__info -blue"><a class="share__name" href="#">Консультация  дермато-венеролога  БЕСПЛАТНО</a>
+          <div class="share__timeBox">
+            <svg class="share__timeIcon">
+              <use xlink:href="assets/img/sprite.svg#clock"></use>
+            </svg>
+            <div class="share__time">до 24.мая 2016</div>
+          </div>
+        </div>
+      </div>
       <div class="mainContent">
         <section class="about__context" id="about-center">
           <h3 class="title-md">Центр восстановительной и эстетической медицины часы</h3>
@@ -76,7 +105,7 @@
         </section>
         <section class="specialists -index" id="specialists">
           <h2 class="title-bg">Специалисты</h2>
-          <ul class="specialists__list swiper-specialists-3">
+          <ul class="specialists__list swiper-specialists-about">
             <div class="swiper-wrapper">
               <li class="specialists__item swiper-slide">
                 <div class="specialists__imagebox"><img class="specialists__image" src="assets/img/specialists/1.png" alt="alt"></div><a class="specialists__name" href="/specialist.html"><span>Захарова</span><br><span>Диана Владимировна</span></a><span class="specialists__status">врач-дерматовенеролог</span>
@@ -110,35 +139,7 @@
           <p>Купи подарочную карту любимой - сделай себе приятно.</p>
         </section>
       </div>
-      <div class="sideSection">
-        <div class="sideMenu"><a class="sideMenu__link" href="#about-center">О центре</a><a class="sideMenu__link" href="#photogalery">Фотогалерея</a><a class="sideMenu__link" href="#sertificate">Сертификаты</a><a class="sideMenu__link" href="#specialists">Специалисты</a><a class="sideMenu__link" href="#vitanova-card">Карты Vita Nuova</a>
-        </div>
-        <form class="consultForm">
-          <p class="consultForm__title">Записатья на консултацию</p>
-          <p class="consultForm__titleSub">Не откладывайте на потом — запишитесь на консультацию врача сегодня</p>
-          <input type="text" name="name" placeholder="Ваше имя">
-          <input type="tel" name="phone" id="phone">
-          <button class="btnConsult -center">Записаться</button>
-        </form>
-        <div class="sideDiscount discount__info"><img class="discount__image" src="assets/img/sideDiscount.png" alt=""/><a class="discount__name" href="#">Скидка для  студентов 15%  на эпиляцию</a>
-          <div class="discount__timeBox">
-            <svg class="share__timeIcon">
-              <use xlink:href="assets/img/sprite.svg#clock"></use>
-            </svg>
-            <div class="discount__time">до 16.мая 2016</div>
-          </div>
-        </div>
-        <div class="sideShare share__info -blue"><a class="share__name" href="#">Консультация  дермато-венеролога  БЕСПЛАТНО</a>
-          <div class="share__timeBox">
-            <svg class="share__timeIcon">
-              <use xlink:href="assets/img/sprite.svg#clock"></use>
-            </svg>
-            <div class="share__time">до 24.мая 2016</div>
-          </div>
-        </div>
-      </div>
     </div>
-    <div class="map"><iframe src="https://yandex.ua/map-widget/v1/-/CBaTJ0WMxA"frameborder="0"></iframe></div>
     <div class="modal">
       <form class="modalForm"><span class="modal__close">x</span>
         <p class="modalForm__title">Записатья на консултацию</p>

@@ -1,6 +1,14 @@
 .about
+  display: flex
+  justify-content: space-between
+  flex-direction: row-reverse
+  @include w1023
+    flex-wrap: wrap
   & .title-bg
     text-align: left
+  & .mainContent
+    @include w1159
+      max-width: 699px
   &__workTime
     font-family: 'RobotoRegular' !important
     margin-top: 0 !important
@@ -71,3 +79,9 @@
       +Roboto(light)
       &:last-child
         margin-bottom: 0
+
+.swiper-specialists-about
+  max-width: calc(100% - 40px) !important
+  & .specialists__item
+    min-width: 228px !important
+    max-width: 228px !important

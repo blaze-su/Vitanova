@@ -3,6 +3,21 @@ extends ../_template
 block content
   +subHeader("О центре")
   .container.about
+    .sideSection
+      -
+        var sideMenuArray = [
+          {name: 'О центре', src: 'about-center'},
+          {name: 'Фотогалерея', src: 'photogalery'},
+          {name: 'Сертификаты', src: 'sertificate'},
+          {name: 'Специалисты', src: 'specialists'},
+          {name: 'Карты Vita Nuova', src: 'vitanova-card'}
+        ]
+      +sideMenu(sideMenuArray)
+      block _consultForm
+        include ../common/_consultForm
+      +sideDiscount("Скидка для  студентов 15%  на эпиляцию", "до 16.мая 2016")
+      //- класс цвета задаётся через админку в зависимости от выбранного цвета (их всего 4)
+      +sideShare("-blue", "Консультация  дермато-венеролога  БЕСПЛАТНО", "до 24.мая 2016")
     .mainContent
       section#about-center.about__context
         h3.title-md Центр восстановительной и эстетической медицины часы
@@ -50,7 +65,7 @@ block content
             {name: 'Коротких', name2: 'Вячеслав Сергеевич', src: 'assets/img/specialists/2.png', status: 'врач-физиотерапевт'},
             {name: 'Иванова', name2: 'Юлия Александровна', src: 'assets/img/specialists/3.png', status: 'врач-дерматовенеролог'}
           ]
-        ul.specialists__list.swiper-specialists-3
+        ul.specialists__list.swiper-specialists-about
           .swiper-wrapper
             each item in specialists
               li.specialists__item.swiper-slide
@@ -75,18 +90,3 @@ block content
         p Карту VitaNuova можно приобрести в подарок, положив на нее выбранную Вами сумму (но не менее 2 000 рублей). После того, как подарочные деньги будут израсходованы, карта остается у владельца как дисконтная.
         p Карта оснащена серийным номером. При утере или повреждении не восстанавливается.
         p Купи подарочную карту любимой - сделай себе приятно.
-    .sideSection
-      -
-        var sideMenuArray = [
-          {name: 'О центре', src: 'about-center'},
-          {name: 'Фотогалерея', src: 'photogalery'},
-          {name: 'Сертификаты', src: 'sertificate'},
-          {name: 'Специалисты', src: 'specialists'},
-          {name: 'Карты Vita Nuova', src: 'vitanova-card'}
-        ]
-      +sideMenu(sideMenuArray)
-      block _consultForm
-        include ../common/_consultForm
-      +sideDiscount("Скидка для  студентов 15%  на эпиляцию", "до 16.мая 2016")
-      //- класс цвета задаётся через админку в зависимости от выбранного цвета (их всего 4)
-      +sideShare("-blue", "Консультация  дермато-венеролога  БЕСПЛАТНО", "до 24.мая 2016")

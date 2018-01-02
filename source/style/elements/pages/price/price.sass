@@ -1,5 +1,10 @@
 .pricesPage
   width: 100%
+  display: flex
+  justify-content: space-between
+  flex-direction: row-reverse
+  @include w1023
+    flex-wrap: wrap
   &__item
     margin-bottom: 3.75rem
     & > .title-bg

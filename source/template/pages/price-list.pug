@@ -2,8 +2,25 @@ extends ../_template
 
 block content
   +subHeader("Прайс - лист", true)
+  +banner("assets/img/banner/laser.png", "Лазерная ЭПИЛЯЦИЯ", "Без боли")
   .container.pricesPage
-    +banner("assets/img/banner/laser.png", "Лазерная ЭПИЛЯЦИЯ", "Без боли")
+    .sideSection
+      -
+        var sideMenuArray = [
+          {name: 'Уход за лицом', src: 'yxod-za-licom'},
+          {name: 'Контурная пластика', src: 'conturnaya-plastika'}
+        ]
+      +sideMenu(sideMenuArray)
+      block _consultForm
+        include ../common/_consultForm
+      //- скидки нужно выводить первыми потом только консультации
+      +sideDiscount("Скидка для  студентов 15%  на эпиляцию", "до 16.мая 2016")
+      +sideDiscount("для теста", "для теста")
+      //- класс цвета задаётся через админку в зависимости от выбранного цвета (их всего 4)
+      +sideShare("-blue", "Консультация  дермато-венеролога  БЕСПЛАТНО", "до 24.мая 2016")
+      +sideShare("-yellow", "для теста", "для теста")
+      +sideShare("-pink", "для теста", "для теста")
+      +sideShare("-brown", "для теста", "для теста")
     //- на этой страница необходимо чтоб к элементу с классом .pricesPage__item
     //- добавлялся id с таким же что и src ссылки с классом .sideMenu__link на этой странице
     .mainContent
@@ -15,7 +32,7 @@ block content
             tableName: 'Лоб',
             rowInfo: [
               {number: 1, name: "Лоб", price: 2000},
-              {number: 2, name: "Межбровье", price: 1500},
+              {number: 2, name: "Межбровье МежбровьеМежбровье Межбровье", price: 1500},
               {number: 3, name: "Уши", price: 3350},
               {number: 4, name: "Подбородок", price: 1200}
             ]
@@ -62,15 +79,3 @@ block content
                     td= itemTable.number
                     td.-name= itemTable.name
                     td= itemTable.price
-    .sideSection
-      -
-        var sideMenuArray = [
-          {name: 'Уход за лицом', src: 'yxod-za-licom'},
-          {name: 'Контурная пластика', src: 'conturnaya-plastika'}
-        ]
-      +sideMenu(sideMenuArray)
-      block _consultForm
-        include ../common/_consultForm
-      +sideDiscount("Скидка для  студентов 15%  на эпиляцию", "до 16.мая 2016")
-      //- класс цвета задаётся через админку в зависимости от выбранного цвета (их всего 4)
-      +sideShare("-blue", "Консультация  дермато-венеролога  БЕСПЛАТНО", "до 24.мая 2016")

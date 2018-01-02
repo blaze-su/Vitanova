@@ -9,6 +9,8 @@
     min-width: auto
     text-align: left
     display: flex
+    @include w479
+      display: block
     &:after
       display: block
       content: ''
@@ -16,9 +18,22 @@
   &__imagebox
     float: left
     margin-right: 20px
+    min-width: 154px
+    max-width: 154px
+    @include w479
+      max-width: 130px
+      min-width: auto
+      margin: 0 auto
+      float: none
   &__info
     float: left
     padding-top: 25px
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    @include w479
+      align-items: center
+      width: 100%
   &__link
     +Roboto(medium)
     text-transform: uppercase
@@ -26,6 +41,8 @@
     text-decoration: underline
     margin-top: 2.813rem
     display: block
+    @include w479
+      margin-top: 1.2rem
   &.-index
     position: relative
     & .specialists

@@ -26,8 +26,10 @@
       </div>
     </header>
     <div class="container someService">
-      <div class="banner"><img class="banner__image" src="assets/img/banner/laser-2.png" alt=""/>
-        <h1 class="banner__title">Лазерная косметология</h1><span class="banner__titleSub">Омоложение лица, лечение пигментации, удаление сосудов</span>
+      <div class="banner container"><img class="banner__image" src="assets/img/banner/laser-2.png" alt=""/>
+        <div class="banner__info">
+          <h1 class="banner__title">Лазерная косметология</h1><span class="banner__titleSub">Омоложение лица, лечение пигментации, удаление сосудов</span>
+        </div>
       </div>
       <div class="mainContent">
         <section class="someService__description" id="description">
@@ -81,7 +83,7 @@
             </tbody>
           </table>
         </div>
-        <button class="btnConsult -center">ЗАПИСАТЬСЯ</button>
+        <button class="btnConsult -center -nomodal">ЗАПИСАТЬСЯ</button>
         <section class="someService__FAQ" id="FAQ">
           <h2 class="title-bg">Вопрос - Ответ</h2>
           <div class="someService__FAQList">
@@ -146,7 +148,7 @@
               <div class="specialists__imagebox"><img class="specialists__image" src="assets/img/specialists/2.png" alt="alt"></div><a class="specialists__name" href="#"><span>Коротких</span><br><span>Вячеслав Сергеевич</span></a><span class="specialists__status">врач-физиотерапевт</span>
             </li>
           </ul>
-          <button class="btnConsult -center">Получить консультацию</button>
+          <button class="btnConsult -center -nomodal">Получить консультацию</button>
         </section>
       </div>
       <div class="sideSection">
@@ -157,7 +159,7 @@
           <p class="consultForm__titleSub">Не откладывайте на потом — запишитесь на консультацию врача сегодня</p>
           <input type="text" name="name" placeholder="Ваше имя">
           <input type="tel" name="phone" id="phone">
-          <button class="btnConsult -center">Записаться</button>
+          <button class="btnConsult -center -nomodal">Записаться</button>
         </form>
         <div class="sideDiscount discount__info"><img class="discount__image" src="assets/img/sideDiscount.png" alt=""/><a class="discount__name" href="#">Скидка для  студентов 15%  на эпиляцию</a>
           <div class="discount__timeBox">
@@ -177,7 +179,6 @@
         </div>
       </div>
     </div>
-    <div class="map"><iframe src="https://yandex.ua/map-widget/v1/-/CBaTJ0WMxA"frameborder="0"></iframe></div>
     <div class="modal">
       <form class="modalForm"><span class="modal__close">x</span>
         <p class="modalForm__title">Записатья на консултацию</p>
