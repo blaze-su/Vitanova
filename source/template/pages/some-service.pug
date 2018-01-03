@@ -1,8 +1,23 @@
 extends ../_template
 
 block content
+  +banner("assets/img/banner/laser-2.png", "Лазерная косметология", "Омоложение лица, лечение пигментации, удаление сосудов")
   .container.someService
-    +banner("assets/img/banner/laser-2.png", "Лазерная косметология", "Омоложение лица, лечение пигментации, удаление сосудов")
+    .sideSection
+      -
+        var sideMenuArray = [
+          {name: 'Описание', src: 'description'},
+          {name: 'Прайс - лист', src: 'price'},
+          {name: 'Специалисты', src: 'specialists'},
+          {name: 'Вопрос - ответ', src: 'FAQ'},
+          {name: 'Отзывы', src: 'reviews'}
+        ]
+      +sideMenu(sideMenuArray)
+      block _consultForm
+        include ../common/_consultForm
+      +sideDiscount("Скидка для  студентов 15%  на эпиляцию", "до 16.мая 2016")
+      //- класс цвета задаётся через админку в зависимости от выбранного цвета (их всего 4)
+      +sideShare("-blue", "Консультация  дермато-венеролога  БЕСПЛАТНО", "до 24.мая 2016")
     .mainContent
       section#description.someService__description
         .someService__descriptionItem
@@ -105,18 +120,3 @@ block content
                 span= item.name2
               span.specialists__status= item.status
         +_btnConsult("Получить консультацию", true)
-    .sideSection
-      -
-        var sideMenuArray = [
-          {name: 'Описание', src: 'description'},
-          {name: 'Прайс - лист', src: 'price'},
-          {name: 'Специалисты', src: 'specialists'},
-          {name: 'Вопрос - ответ', src: 'FAQ'},
-          {name: 'Отзывы', src: 'reviews'}
-        ]
-      +sideMenu(sideMenuArray)
-      block _consultForm
-        include ../common/_consultForm
-      +sideDiscount("Скидка для  студентов 15%  на эпиляцию", "до 16.мая 2016")
-      //- класс цвета задаётся через админку в зависимости от выбранного цвета (их всего 4)
-      +sideShare("-blue", "Консультация  дермато-венеролога  БЕСПЛАТНО", "до 24.мая 2016")
