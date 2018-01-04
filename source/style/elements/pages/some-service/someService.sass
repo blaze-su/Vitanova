@@ -5,15 +5,22 @@
   @include w1023
     flex-wrap: wrap
     width: 100%
-  & > .mainContent    
+  & .title-bg
+    @include w1023
+      text-align: center !important
+  & > .mainContent
     & > button
       margin-bottom: 3.75rem
+      @include w1023
+        margin-bottom: 1.75rem
     & > .btnConsult
       min-width: 275px
     & .title-bg
       text-align: left
   &__description
     padding-top: 15px
+    @include w479
+      text-align: center
     &Item
       margin-bottom: 2.5rem
       & > h3
@@ -30,6 +37,8 @@
     margin-bottom: 2.5rem
     & > .title-bg
       margin-bottom: 2.5rem
+      @include w1023
+        margin-bottom: 1.5rem
   &__FAQ
     &Item
       overflow: hidden
@@ -46,6 +55,7 @@
         & > .someService__FAQAnswer
           height: auto
           padding: 25px
+          padding: 10px
     &Question
       padding: 12px 20px 12px 90px
       color: $mBlue
@@ -61,36 +71,61 @@
         transform: translateY(-50%) rotate(90deg)
         left: 32px
         font-size: 35px
+        height: 34px
+        padding-bottom: 20px
+        @include w767
+          left: 15px
+      @include w767
+        padding: 12px 10px 12px 40px
+        font-size: 1rem
     &Answer
       height: 0
       padding: 0 25px
       background-color: $mBlue
       color: $white
+      @include w767
+        padding: 0 10px
       & > p
         line-height: 1.5
         margin-bottom: 15px
         &:last-child
           margin-bottom: 0
   &__result
+    & > .title-bg
+      @include w1023
+        text-align: center !important
     &Image
       min-width: 100%
-      min-height: 100%
       max-height: 100%
+      height: auto
       width: auto
+      @include w1023
+        vertical-align: middle
       &Box
         max-width: 645px
         width: 100%
-        height: 410px
+        max-height: 410px
+        height: auto
         overflow: hidden
         border: 1px solid $greyLight
         box-shadow: 0 2px 5px 0 rgba(0,0,0,.2)
+        @include w1023
+          margin: auto
   & .specialists
     width: 100%
     overflow: hidden
     float: left
+    & > .title-bg
+      @include w1023
+        text-align: center
     &__list
       margin-left: -25px !important
       max-width: 100% !important
       margin-bottom: 0 !important
+      @include w1023
+        margin-left: 0 !important
     &__item
       margin-bottom: 40px !important
+      @include w1023
+        margin: auto
+        max-width: 260px

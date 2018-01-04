@@ -41,7 +41,7 @@ block content
           ]
         }
       #price.someService__priceTable
-        h3.title-bg= tableInfo.title
+        h2.title-bg= tableInfo.title
         table
           thead
             tr
@@ -65,7 +65,7 @@ block content
                   td= item.number
                   td.-name= item.name
                   td= item.price
-      +_btnConsult("ЗАПИСАТЬСЯ", true)
+      +_btnConsult("ЗАПИСАТЬСЯ", true, true)
       section#FAQ.someService__FAQ
         h2.title-bg Вопрос - Ответ
         -
@@ -119,4 +119,4 @@ block content
                 br
                 span= item.name2
               span.specialists__status= item.status
-        +_btnConsult("Получить консультацию", true)
+        +_btnConsult("Получить консультацию", true, true)
