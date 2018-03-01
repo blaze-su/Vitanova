@@ -5,6 +5,7 @@ window.onload = () => {
   maskPhone();
   galeryShowMorePhoto();
   galeryMaximizePhoto();
+  sertificateMaximizePhoto();
   serviceFQA();
   modalWindow(document.getElementsByClassName('btnConsult'), true);
   modalWindow(document.getElementsByClassName('header__call')[0]);
@@ -122,6 +123,40 @@ var galeryMaximizePhoto = () => {
         Photo.onmouseout = () =>
           PhotoBox.onclick = () => {
             document.getElementsByClassName('galery')[0].removeChild(PhotoBox);
+          };
+      }
+    });
+  }
+};
+var sertificateMaximizePhoto = () => {
+  if (document.getElementsByClassName('about__sertificates')) {
+    Array.from(document.getElementsByClassName('about__sertificatesItem')).forEach(element => {
+      element.onclick = (e) => {
+        var src = element.getAttribute('src');
+        src = src.replace("sm", "fs");
+        var alt = element.getAttribute('alt');
+
+        var PhotoBox = document.createElement('div');
+        var Photo = document.createElement('img');
+
+        PhotoBox.className = 'galery__maximizePhotoBox';
+        Photo.className = 'galery__maximizePhoto';
+        Photo.src = src;
+        Photo.alt = alt;
+
+        document.getElementsByClassName('about__sertificates')[0].appendChild(PhotoBox);
+        PhotoBox.appendChild(Photo);
+
+        PhotoBox.onclick = () =>
+          document.getElementsByClassName('about__sertificates')[0].removeChild(PhotoBox);
+
+        Photo.onmouseover = () => PhotoBox.onclick = () => {
+          return false
+        };
+
+        Photo.onmouseout = () =>
+          PhotoBox.onclick = () => {
+            document.getElementsByClassName('about__sertificates')[0].removeChild(PhotoBox);
           };
       }
     });
