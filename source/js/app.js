@@ -95,68 +95,156 @@ var galeryShowMorePhoto = () => {
   }
 };
 var galeryMaximizePhoto = () => {
-  if (document.getElementsByClassName('galery')) {
+  if (document.querySelector('.galery')) var galery = document.querySelector('.galery');
+  if (galery) {
+    var items = [];
+    document.querySelectorAll('.galery__photo').forEach(el => {
+      items.push({
+        id: items.length,
+        src: el.getAttribute('src'),
+        alt: el.getAttribute('alt')
+      })
+    });
+
     Array.from(document.getElementsByClassName('galery__item')).forEach(element => {
       element.onclick = (e) => {
         var src = element.getElementsByClassName('galery__photo')[0].getAttribute('src');
-        src = src.replace("sm", "fs");
         var alt = element.getElementsByClassName('galery__photo')[0].getAttribute('alt');
 
+        var globalI = 0;
+        
+        items.forEach((item, i) => {
+          if (item.src === src) globalI = i;
+        });
+
+        var PhotoBg = document.createElement('div');
         var PhotoBox = document.createElement('div');
+        var next = document.createElement('div');
+        var prev = document.createElement('div');
         var Photo = document.createElement('img');
 
-        PhotoBox.className = 'galery__maximizePhotoBox';
+        PhotoBg.className = 'galery__maximizeBg';
         Photo.className = 'galery__maximizePhoto';
         Photo.src = src;
         Photo.alt = alt;
+        PhotoBox.className = 'galery__maximizePhotoBox';
+        next.className = 'galery__maximizeNext';
+        prev.className = 'galery__maximizePrev';
 
-        document.getElementsByClassName('galery')[0].appendChild(PhotoBox);
+        galery.appendChild(PhotoBg);
+        PhotoBg.appendChild(PhotoBox);
+        PhotoBox.appendChild(next);
         PhotoBox.appendChild(Photo);
+        PhotoBox.appendChild(prev);
 
-        PhotoBox.onclick = () =>
-          document.getElementsByClassName('galery')[0].removeChild(PhotoBox);
+        document.querySelector('.galery__maximizeNext').onclick = () => {
+          if (globalI != items.length - 1) {
+            globalI++;
+            Photo.src = items[globalI].src;
+            Photo.alt = items[globalI].alt;
+          } else {
+            return false
+          }
+        };
 
-        Photo.onmouseover = () => PhotoBox.onclick = () => {
+        document.querySelector('.galery__maximizePrev').onclick = () => {
+          if (globalI != 0) {
+            globalI--;
+            Photo.src = items[globalI].src;
+            Photo.alt = items[globalI].alt;
+          } else {
+            return false
+          }
+        };
+
+        PhotoBg.onclick = () =>
+          galery.removeChild(PhotoBg);
+
+        PhotoBox.onmouseover = () => PhotoBg.onclick = () => {
           return false
         };
 
-        Photo.onmouseout = () =>
-          PhotoBox.onclick = () => {
-            document.getElementsByClassName('galery')[0].removeChild(PhotoBox);
+        PhotoBox.onmouseout = () =>
+          PhotoBg.onclick = () => {
+            galery.removeChild(PhotoBg);
           };
       }
     });
   }
 };
 var sertificateMaximizePhoto = () => {
-  if (document.getElementsByClassName('about__sertificates')) {
+  if (document.querySelector('.about__sertificates')) var galery = document.querySelector('.about__sertificates');
+  if (galery) {
+    var items = [];
+      document.querySelectorAll('.about__sertificatesItem').forEach(el => {
+        items.push({
+          id: items.length,
+          src: el.getAttribute('src'),
+          alt: el.getAttribute('alt')
+        })
+      });
+
     Array.from(document.getElementsByClassName('about__sertificatesItem')).forEach(element => {
       element.onclick = (e) => {
         var src = element.getAttribute('src');
-        src = src.replace("sm", "fs");
         var alt = element.getAttribute('alt');
 
+        var globalI = 0;
+      
+        items.forEach((item, i) => {
+          if (item.src === src) globalI = i;
+        });
+
+        var PhotoBg = document.createElement('div');
         var PhotoBox = document.createElement('div');
+        var next = document.createElement('div');
+        var prev = document.createElement('div');
         var Photo = document.createElement('img');
 
-        PhotoBox.className = 'galery__maximizePhotoBox';
+        PhotoBg.className = 'galery__maximizeBg';
         Photo.className = 'galery__maximizePhoto';
         Photo.src = src;
         Photo.alt = alt;
+        PhotoBox.className = 'galery__maximizePhotoBox';
+        next.className = 'galery__maximizeNext';
+        prev.className = 'galery__maximizePrev';
 
-        document.getElementsByClassName('about__sertificates')[0].appendChild(PhotoBox);
+        galery.appendChild(PhotoBg);
+        PhotoBg.appendChild(PhotoBox);
+        PhotoBox.appendChild(next);
         PhotoBox.appendChild(Photo);
+        PhotoBox.appendChild(prev);
 
-        PhotoBox.onclick = () =>
-          document.getElementsByClassName('about__sertificates')[0].removeChild(PhotoBox);
+        document.querySelector('.galery__maximizeNext').onclick = () => {
+          if (globalI != items.length - 1) {
+            globalI++;
+            Photo.src = items[globalI].src;
+            Photo.alt = items[globalI].alt;
+          } else {
+            return false
+          }
+        };
 
-        Photo.onmouseover = () => PhotoBox.onclick = () => {
+        document.querySelector('.galery__maximizePrev').onclick = () => {
+          if (globalI != 0) {
+            globalI--;
+            Photo.src = items[globalI].src;
+            Photo.alt = items[globalI].alt;
+          } else {
+            return false
+          }
+        };
+        
+        PhotoBg.onclick = () =>
+          galery.removeChild(PhotoBg);
+
+        PhotoBox.onmouseover = () => PhotoBg.onclick = () => {
           return false
         };
 
-        Photo.onmouseout = () =>
-          PhotoBox.onclick = () => {
-            document.getElementsByClassName('about__sertificates')[0].removeChild(PhotoBox);
+        PhotoBox.onmouseout = () =>
+          PhotoBg.onclick = () => {
+            galery.removeChild(PhotoBg);
           };
       }
     });
